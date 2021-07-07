@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+.header {
+  width: 100vw;
+  height: 65vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Card {
+  overflow: hidden;
+  outline: none;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px 3;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.Card img {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  width: inherit;
+}
+
+.Card .author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.8rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  opacity: 0.6;
+}
+
+.Card .author > p {
+  margin: 0;
+}
+
+.Card .cardBody {
+  padding: 1rem;
+  padding-top: 0;
+  line-height: 20px;
+}
+
+.Card .cardBody h3 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.Card .cardBody p {
+  margin-top: 0;
+  font-size: 0.93rem;
+}
+
+.Card .cardBody > button {
+  border: 1px solid #e4cb8d;
+  outline: none;
+  background-color: #e4cb8d;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.Card .cardBody > button:hover {
+  background-color: #e2b442;
+  border: 1px solid #e4cb8d;
+}
+
+.Card:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(10, 7, 206, 0.527)), to(white));
+  background: linear-gradient(to bottom, rgba(10, 7, 206, 0.527) 60%, white 100%);
+  -webkit-filter: drop-shadow(4px 3px 10px rgba(116, 114, 114, 0.623));
+          filter: drop-shadow(4px 3px 10px rgba(116, 114, 114, 0.623));
+  border-radius: 5px;
+}
+
+.Card:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.Card:hover h3 {
+  color: #000000;
+}
+
+.Card:hover .author {
+  margin-top: 1rem;
+}
+
+.blogMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+}
+/*# sourceMappingURL=Blog.module.css.map */

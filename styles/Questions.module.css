@@ -1,0 +1,30 @@
+/*# sourceMappingURL=faq.module.css.map */
+@media screen and (min-width: 480px) {
+	.fag {
+		padding-top: 3rem;
+		width: 80vw;
+		margin: auto;
+	}
+	.fag .content {
+		margin-left: 1.5rem;
+	}
+	.faq h3 {
+		font-weight: 400;
+		margin: 0;
+	}
+}
+@media screen and (max-width: 480px) {
+	.fag {
+		padding-top: 3rem;
+		width: 96vw;
+		margin: auto;
+	}
+	.faq h3 {
+		font-weight: 500;
+		margin: 0;
+		font-size: 1rem;
+	}
+	.fag .content {
+		margin-left: 0rem;
+	}
+}

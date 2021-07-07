@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+.MuiBox-root,
+.MuiBox-root-15 {
+  padding: 0;
+}
+
+.btnGrad {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f09819),
+    color-stop(51%, #edde5d),
+    to(#f09819)
+  );
+  background-image: linear-gradient(
+    to right,
+    #f09819 0%,
+    #edde5d 51%,
+    #f09819 100%
+  );
+}
+
+.btnGrad {
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  display: block;
+  outline: none;
+  border: none;
+  margin: auto;
+  padding: 0.5rem;
+  width: 30%;
+  height: 2.2rem;
+  color: #212121;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.btnGrad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #000080;
+  text-decoration: none;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+/* input control styles */
+
+.checkoutForm .inputControl {
+  border: 1px solid rgba(204, 204, 204, 0.726);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5vh;
+  width: 300px;
+  margin-bottom: 2rem;
+}
+
+.checkoutForm .inputControl select,
+.checkoutForm .inputControl input {
+  width: 100%;
+}
+
+.checkoutForm .inputControl span {
+  width: 40px;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid rgba(204, 204, 204, 0.726);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #e9ecef;
+}
+
+.checkoutForm .inputControl > * {
+  border: none;
+  outline: none;
+}
+/* animation*/
+
+.whatsapp{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 7%;
+  right: 3%;
+  cursor: pointer;
+}
+.whatsapp:hover{
+  
+}
+.whatsapp > img{
+  width:40px;
+  height:40px;
+  object-fit: contain;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.425);
+}
+@media screen and (max-width: 1023px)
+{
+  .animation
+{
+ display: none;
+}
+.road
+{
+ display: none;
+}
+.gadi
+{
+  display: none;
+ 
+}
+.gadi2
+{
+ display: none;
+}
+.homePay > img
+{
+  margin: 2rem 0;
+}
+}

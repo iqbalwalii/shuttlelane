@@ -1,0 +1,28 @@
+.container {
+	width: 80vw;
+	margin: 7rem auto;
+}
+.container p {
+	font-size: 1.05rem;
+	color: #6f737b;
+}
+.container .content {
+	margin-left: 1.5rem;
+}
+
+.container li {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #000000bf;
+	margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+	.container {
+		width: 100vw;
+		margin-bottom: 0rem;
+	}
+	.container .content {
+		margin-left: 0;
+	}
+}

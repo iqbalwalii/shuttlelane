@@ -1,0 +1,51 @@
+.checkoutForm .radios {
+  margin: 0.7rem 0 1rem 2rem;
+}
+
+.checkoutForm .inputControl {
+  border: 1px solid rgba(204, 204, 204, 0.726);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5vh;
+  width: 300px;
+  margin-bottom: 2rem;
+}
+
+.checkoutForm .inputControl select,
+.checkoutForm .inputControl input {
+  width: 100%;
+}
+
+.checkoutForm .inputControl span {
+  width: 40px;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(204, 204, 204, 0.726);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #e9ecef;
+}
+
+.checkoutForm .inputControl > * {
+  border: none;
+  outline: none;
+}
+
+.checkoutForm .formGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=Next.module.css.map */

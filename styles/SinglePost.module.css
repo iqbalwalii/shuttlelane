@@ -1,0 +1,48 @@
+.post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.post > img {
+  width: 50%;
+}
+
+.postImage > img {
+  width: 100%;
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.content {
+  color: rgba(44, 44, 44, 0.918);
+  word-spacing: 3px;
+}
+
+.content > *::first-letter {
+  font-size: 180%;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: Gold;
+}
+
+.postHeader {
+  padding: 1rem;
+  padding-bottom: 0;
+  text-transform: capitalize;
+  min-height: 30vh;
+  color: #000000e8;
+  padding-top: 3rem;
+}
+/*# sourceMappingURL=SinglePost.module.css.map */
