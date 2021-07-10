@@ -115,7 +115,7 @@ a {
 }
 /* animation*/
 
-.whatsapp{
+.whatsapp {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -124,36 +124,36 @@ a {
   right: 3%;
   cursor: pointer;
 }
-.whatsapp:hover{
-  
+.whatsapp:hover {
 }
-.whatsapp > img{
-  width:40px;
-  height:40px;
+.whatsapp > img {
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.425);
 }
-@media screen and (max-width: 1023px)
-{
-  .animation
-{
- display: none;
+@media screen and (max-width: 1023px) {
+  .btnGrad {
+    width: fit-content;
+  }
+  .homePay > img {
+    margin: 2rem 0;
+  }
 }
-.road
-{
- display: none;
+
+.fleetGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin: 1rem 0 2rem 0;
 }
-.gadi
-{
-  display: none;
- 
+.fleetGrid img {
+  margin: auto;
+  width: 70px;
 }
-.gadi2
-{
- display: none;
+.fleetGrid div {
+  padding: 1rem;
+  border: 1px solid #212121;
 }
-.homePay > img
-{
-  margin: 2rem 0;
-}
+.fleetGrid p {
+  font-size: 0.8rem;
 }

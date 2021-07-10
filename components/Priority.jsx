@@ -37,7 +37,6 @@ export default class Priority extends Component {
     return (
       <div>
         <form className={car.form} id="pass">
-       
           <select
             name=""
             id=""
@@ -45,9 +44,10 @@ export default class Priority extends Component {
             required
             onChange={(e) => this.setState({ service: e.target.value })}
           >
-            <option value="" selected disabled value="null" id="null">
+            <option value="" selected disabled value="null" id="null"></option>
+            <option value="Pickup" disabled>
+              Select Service
             </option>
-            <option value="Pickup" disabled>Select Service</option>
             <option value="Pickup">Arrival Protocol Service </option>
             <option value="dropoff">Departure Protocol Service </option>
           </select>
@@ -93,15 +93,17 @@ export default class Priority extends Component {
             value={this.state.passengers}
             onChange={(e) => this.setState({ passengers: e.target.value })}
           />
-          <select name="" id="" required >
-                          <option value="" selected disabled value='null' id="null">Select Cabin Class </option>
-      
-                          <option value="Pickup">First Class</option>
-                          <option value="Pickup">Business Class </option>
-                          <option value="Pickup">Premium Economy</option>
-                          <option value="Pickup">Economy</option>
-                 </select>
-             {/* <input
+          <select name="" id="" required>
+            <option value="" selected disabled value="null" id="null">
+              Select Cabin Class{" "}
+            </option>
+
+            <option value="Pickup">First Class</option>
+            <option value="Pickup">Business Class </option>
+            <option value="Pickup">Premium Economy</option>
+            <option value="Pickup">Economy</option>
+          </select>
+          {/* <input
             required
             placeholder="First Name"
             type="date"
@@ -119,7 +121,7 @@ export default class Priority extends Component {
             value={this.state.lastName}
             onChange={(e) => this.setState({ lastName: e.target.value })}
           /> */}
-          <Link href="/booking">
+          <Link href="/PriorityPass">
             <a className="btnGrad">Procced</a>
           </Link>
         </form>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Grid, Typography, Modal, Card } from '@material-ui/core';
 import Reviews from '../components/Reviews';
 import Contact from '../components/Contact';
-import Slider from '../components/Slider';
+import Slider2 from '../components/Slider';
 import Choose from '../components/Choose';
 import Works from '../components/Works';
 import Partners from '../components/Partners';
@@ -113,7 +113,7 @@ export default function Home() {
 						choose from depending on your needs.
 					</Grid>
 					<Grid item xs={12}>
-						<Slider />
+						<Slider2 />
 					</Grid>
 				</Grid>
 			</section>

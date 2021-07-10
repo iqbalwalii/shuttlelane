@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import Contact from "../../components/Contact";
 import about from "../../styles/About.module.css";
 import Styles from "../../styles/Summary.module.css";
-import Link from 'next/link';
+import Link from "next/link";
 const partner = () => {
   const routes = {
     "About Shuttlelane": "/company/about",
@@ -23,7 +23,7 @@ const partner = () => {
           <Sidebar heading="Company" routes={routes} />
         </Grid>
         <Grid item xs={8} style={{ marginLeft: "1.5rem" }}>
-          <Typography variant="h1" paragraph style={{color:'#000080'}}>
+          <Typography variant="h1" paragraph style={{ color: "#000080" }}>
             Become a partner
           </Typography>
 
@@ -41,43 +41,71 @@ const partner = () => {
             to us by email: partnership@shuttlelane.com and we will get back to
             you as soon as possible.
           </Typography>
-             <Typography variant="h5" paragraph color="textPrimary">
+          <Typography variant="h5" paragraph color="textPrimary">
             Partner Services
           </Typography>
-        <Grid item container spacing={2} xs={12} style={{justifyContent:'center', alignItems:'center'}}>
-          <Grid item xs={4}>
-            <div className={Styles.card} data-aos="flip-left">
-              <img src="/assets/images/car.svg" alt="Car" />
-                <h5 style={{textAlign:'center', color: '#000080'}}>Drive for Shutterlane</h5>
-                <button className='btnGrad' style={{textAlign:'center', width:'60%'}}><Link href='/partnership/register'><a>Register</a></Link></button>
-                
-            </div >
-          </Grid>
+          <Grid
+            item
+            container
+            spacing={2}
+            xs={12}
+            style={{ justifyContent: "center", alignItems: "center" }}
+          >
+            <Grid item xs={12} md={4}>
+              <div className={Styles.card} data-aos="flip-left">
+                <img src="/assets/images/car.svg" alt="Car" />
+                <h5 style={{ textAlign: "center", color: "#000080" }}>
+                  Drive for Shutterlane
+                </h5>
+                <button
+                  className="btnGrad"
+                  style={{ textAlign: "center", width: "60%" }}
+                >
+                  <Link href="/partnership/register">
+                    <a>Register</a>
+                  </Link>
+                </button>
+              </div>
+            </Grid>
 
-          <Grid item xs={4}>
-            <div className={Styles.card} data-aos="flip-up">
+            <Grid item xs={12} md={4}>
+              <div className={Styles.card} data-aos="flip-up">
                 <img src="/assets/images/hotel.svg" alt="Hotel" />
-                <h5 style={{textAlign:'center', color: '#000080'}}>Hotel Management</h5>
-                 <button className='btnGrad' style={{textAlign:'center', width:'60%'}}><Link href='/partnership/registerHotel'><a>Register</a></Link> </button>
-                
-            </div >
-          </Grid>
-          
-          <Grid item xs={4}>
-            <div className={Styles.card} data-aos="flip-right">
-              <img src="/assets/images/fleet.svg" alt="Car" />
-                <h5 style={{textAlign:'center', color: '#000080'}}>Fleet Management</h5>
-                 <button className='btnGrad' style={{textAlign:'center', width:'60%'}}><Link href='/partnership/registerfleet'><a>Register</a></Link></button>
-                
-            </div >
-          </Grid>
+                <h5 style={{ textAlign: "center", color: "#000080" }}>
+                  Hotel Management
+                </h5>
+                <button
+                  className="btnGrad"
+                  style={{ textAlign: "center", width: "60%" }}
+                >
+                  <Link href="/partnership/registerHotel">
+                    <a>Register</a>
+                  </Link>{" "}
+                </button>
+              </div>
+            </Grid>
 
+            <Grid item xs={12} md={4}>
+              <div className={Styles.card} data-aos="flip-right">
+                <img src="/assets/images/fleet.svg" alt="Car" />
+                <h5 style={{ textAlign: "center", color: "#000080" }}>
+                  Fleet Management
+                </h5>
+                <button
+                  className="btnGrad"
+                  style={{ textAlign: "center", width: "60%" }}
+                >
+                  <Link href="/partnership/registerfleet">
+                    <a>Register</a>
+                  </Link>
+                </button>
+              </div>
+            </Grid>
+          </Grid>
+          <Grid item xs={12}></Grid>
         </Grid>
-        <Grid item xs={12}>
-        </Grid>
+        <Contact />
       </Grid>
-          <Contact />
-        </Grid>
     </section>
   );
 };

@@ -5,7 +5,6 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   place-items: center center;
-  background: #323467;
   padding: 1.5rem;
   border-radius: 10px;
 }
@@ -33,7 +32,7 @@
           align-items: center;
   text-align: center;
   font-weight: 600;
-  color: #c2c2c2;
+  color: #2e2c2c;
 }
 
 .cards .card *:first-child {

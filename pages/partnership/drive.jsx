@@ -70,8 +70,8 @@ routes = {
                         Every driver is carefully handpicked and assessed by the Shuttlelane team.
                     </Typography>
                     <Typography variant='body1'>
-                        Apply- You can fill out the application <button style={{}} >here</button>
-                        <Link href='/company/register'><a className='btnGrad'>Register</a></Link>
+                        Apply- You can fill out the application Below
+                        <Link href='/partnership/registerfleet'><a className='btnGrad'style={{marginBottom:'2rem'}} >Register</a></Link>
                     </Typography>
 
 

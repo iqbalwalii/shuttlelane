@@ -13,11 +13,6 @@ const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const Slider = () => {
 	return (
 		<>
-		 <div className="animation">
-			 <img className='road' src="/assets/images/road.svg"/>
-			 <img className='gadi' src="/assets/images/car2.svg"/>
-			 <img className='gadi2' src="/assets/images/car3.svg"/>
-		 </div>
 		<AutoplaySlider
 			// animation="openAnimation"
 			play={true}

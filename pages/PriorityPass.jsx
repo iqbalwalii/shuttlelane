@@ -15,7 +15,6 @@ export default class Booking extends Component {
       <section style={{ width: "80vw", margin: "auto" }}>
         <Grid container spacing={2} justify="center">
           <Grid item sm={8}>
-            
             <Airport />
             <PickCar />
             <Passenger />

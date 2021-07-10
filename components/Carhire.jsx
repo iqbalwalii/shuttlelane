@@ -41,7 +41,9 @@ export default class Carhire extends Component {
             required
             onChange={(e) => this.setState({ vehicle: e.target.value })}
           >
-            <option value="" disabled Selected>Select Car  </option>
+            <option value="" disabled Selected>
+              Select Car
+            </option>
             <option value="Ford Focus">Ford Focus </option>
             <option value="Ford Figo">Ford Figo </option>
             <option value="Ford Fusion">Ford Fusion </option>
@@ -108,7 +110,7 @@ export default class Carhire extends Component {
             value={this.state.days}
             onChange={(e) => this.setState({ days: e.target.value })}
           /> */}
-          <Link href="/booking">
+          <Link href="/checkoutCar">
             <a className="btnGrad">Procced</a>
           </Link>
         </form>

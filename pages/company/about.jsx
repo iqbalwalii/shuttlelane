@@ -100,6 +100,7 @@ const index = () => {
 						paragraph
 						gutterBottom
 						color='textSecondary'
+						
 					>
 						 This is what we do, this is our forte
 						and we have made a good name of it.
