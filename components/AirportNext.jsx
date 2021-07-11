@@ -28,16 +28,10 @@ export default class AirportNext extends Component {
             <h4
               style={{ margin: "0", padding: "0", textTransform: "uppercase" }}
             >
-              Airport Transfer info
+              Airport {this.props.formType} Info
             </h4>
           </div>
           <form>
-            <div className={next.radios}>
-              <label htmlFor="Airport Pickup">Airport Pickup</label>
-              <input type="radio" name="type" id="airport" />
-              <label htmlFor="Airport Dropoff">Airport Drop-Off</label>
-              <input type="radio" name='type' id="airport" />
-            </div>
             <div className={next.formGroup}>
               <div className={next.inputControl}>
                 <span>

@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import input from "../styles/Drivefor.module.css";
+import { useState } from "react";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -103,19 +104,20 @@ function getStepContent(step) {
               </div>
 
               <div className={input.agree}>
-                <select name="" id="">
-                  <option disabled selected>
-                    {" "}
-                    Education
-                  </option>
-                  <option value="primary">Primary</option>
-                  <option value="secondary">Secondary</option>
-                  <option value="polytechnic">Polytechnic</option>
-                  <option value="university">University</option>
-                  <option value="other">Other</option>
-                </select>
-                <input type="checkbox" required name="" id="" />I agree to the
-                Privacy Policy
+                <div className="|">
+                  <select name="" id="">
+                    <option disabled selected>
+                      Education
+                    </option>
+                    <option value="primary">Primary</option>
+                    <option value="secondary">Secondary</option>
+                    <option value="polytechnic">Polytechnic</option>
+                    <option value="university">University</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <input type="checkbox" required name="" id="" />I agree to the
+                  Privacy Policy
+                </div>
               </div>
             </form>
           </Grid>
@@ -189,10 +191,14 @@ function getStepContent(step) {
                   Uber, Taxify, Oride,etc.)
                 </label>
                 <div>
-                  <label htmlFor="male">Yes</label>
-                  <input type="radio" name="service" id="otherservice" />
-                  <label htmlFor="status">No</label>
-                  <input type="radio" name="service" id="otherservice" />
+                  <div className="">
+                    <label htmlFor="male">Yes</label>
+                    <input type="radio" name="service" id="otherservice" />
+                  </div>
+                  <div className="">
+                    <label htmlFor="status">No</label>
+                    <input type="radio" name="service" id="otherservice" />
+                  </div>
                 </div>
                 <input
                   type="text"

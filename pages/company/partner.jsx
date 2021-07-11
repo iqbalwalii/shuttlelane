@@ -19,11 +19,11 @@ const partner = () => {
       style={{ width: "80vw", margin: "7rem auto" }}
     >
       <Grid container justify="center" spacing={3}>
-        <Grid item sm={3}>
+        <Grid item xs={11} sm={3}>
           <Sidebar heading="Company" routes={routes} />
         </Grid>
-        <Grid item xs={8} style={{ marginLeft: "1.5rem" }}>
-          <Typography variant="h1" paragraph style={{ color: "#000080" }}>
+        <Grid item xs={11} sm={7} style={{ marginLeft: "1.5rem" }}>
+          <Typography variant="h5" gutterBottom color="textPrimary">
             Become a partner
           </Typography>
 
