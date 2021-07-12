@@ -8,18 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import input from "../styles/Drivefor.module.css";
 import { useState } from "react";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-  },
-  button: {
-    marginRight: theme.spacing(1),
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-  },
-}));
 let driverRequirements = {
   fName: "",
   midName: "",
@@ -58,54 +46,73 @@ let driverRequirements = {
   exterior3: "",
   exterior4: "",
 };
-function getSteps() {
-  return ["Basic Info", "Additional Information", "Upload Files"];
-}
+export default function Form() {
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      width: "100%",
+    },
+    button: {
+      marginRight: theme.spacing(1),
+    },
+    instructions: {
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+    },
+  }));
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return (
-        <Grid container justify="center" spacing={2}>
-          <Grid item xs={8}>
-            <form className={input.group}>
-              <div className={input.name}>
-                <input type="text" name="" id="" placeholder="First Name" />
-                <input type="text" name="" id="" placeholder="Middle Name" />
-                <input type="text" name="" id="" placeholder="Last Name" />
-              </div>
+  function getSteps() {
+    return ["Basic Info", "Additional Information", "Upload Files"];
+  }
 
-              <div id="radio" className={input.radio}>
-                <div>
-                  <label htmlFor="radio">Gender :</label>
-                  <label htmlFor="male">Male</label>
-                  <input type="radio" name="gender" id="gender" />
-                  <label htmlFor="female">Female</label>
-                  <input type="radio" name="gender" id="gender" />
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return (
+          <Grid container justify="center" spacing={2}>
+            <Grid item xs={8}>
+              <form className={input.group}>
+                <div className={input.name}>
+                  <input type="text" name="" id="" placeholder="First Name" />
+                  <input type="text" name="" id="" placeholder="Middle Name" />
+                  <input type="text" name="" id="" placeholder="Last Name" />
                 </div>
-              </div>
 
-              <div className={input.name}>
-                <input
-                  type="email"
-                  required
-                  name=""
-                  id=""
-                  placeholder="Email Address"
-                />
-                <input type="tel" required name="" id="" placeholder="Phone" />
-                <input
-                  type="tel"
-                  required
-                  name=""
-                  id=""
-                  placeholder="Alternate Number"
-                />
-              </div>
+                <div id="radio" className={input.radio}>
+                  <div>
+                    <label htmlFor="radio">Gender :</label>
+                    <input type="radio" name="gender" id="gender" />
+                    <label htmlFor="male">Male</label>
+                    <input type="radio" name="gender" id="gender" />
+                    <label htmlFor="female">Female</label>
+                  </div>
+                </div>
 
-              <div className={input.agree}>
-                <div className="|">
-                  <select name="" id="">
+                <div className={input.name}>
+                  <input
+                    type="email"
+                    required
+                    name=""
+                    id=""
+                    placeholder="Email Address"
+                  />
+                  <input
+                    type="tel"
+                    required
+                    name=""
+                    id=""
+                    placeholder="Phone"
+                  />
+                  <input
+                    type="tel"
+                    required
+                    name=""
+                    id=""
+                    placeholder="Alternate Number"
+                  />
+                </div>
+
+                <div className={input.agree}>
+                  <select name="" id="" className={input.extra}>
                     <option disabled selected>
                       Education
                     </option>
@@ -115,234 +122,246 @@ function getStepContent(step) {
                     <option value="university">University</option>
                     <option value="other">Other</option>
                   </select>
-                  <input type="checkbox" required name="" id="" />I agree to the
-                  Privacy Policy
-                </div>
-              </div>
-            </form>
-          </Grid>
-        </Grid>
-      );
-    case 1:
-      return (
-        <Grid container justify="center" spacing={2}>
-          <Grid item xs={8}>
-            <form className={input.group}>
-              <div className={input.agree}>
-                <select
-                  name="carType"
-                  id=""
-                  onChange={setdriverInput({
-                    ...driverInput,
-                    carType: e.target.value,
-                  })}
-                  value={(e) => {
-                    e.target.value;
-                  }}
-                >
-                  <option disabled selected>
-                    {" "}
-                    Car Type
-                  </option>
-                  <option value="primary">Salon</option>
-                  <option value="secondary">SUV</option>
-                  <option value="polytechnic">Mini Bus</option>
-                </select>
-                <input type="text" name="" id="" placeholder="Car Name" />
-                <input type="text" name="" id="" placeholder="Model" />
-                <input type="number" name="" id="" placeholder="Year" />
-              </div>
-
-              <div id="radio" className={input.radio}>
-                <div>
-                  <label htmlFor="radio">Marital Status :</label>
-                  <label htmlFor="male">Married</label>
-                  <input type="radio" name="status" id="maritalstatus" />
-                  <label htmlFor="status">Single</label>
-                  <input type="radio" name="status" id="maritalstatus" />
-                </div>
-              </div>
-
-              <div className={input.name}>
-                <input
-                  type="text"
-                  required
-                  name=""
-                  id=""
-                  placeholder="Address"
-                />
-                <input type="text" required name="" id="" placeholder="City" />
-                <input type="text" required name="" id="" placeholder="State" />
-              </div>
-              <h3>Emergency Contact</h3>
-              <div className={input.name}>
-                <input type="text" name="" id="" placeholder="First Name" />
-                <input type="text" name="" id="" placeholder="Middle Name" />
-                <input type="text" name="" id="" placeholder="Last Name" />
-              </div>
-              <div>
-                <input type="tel" name="" id="" placeholder="Phone Number" />
-                <input type="text" name="" id="" placeholder="Address" />
-              </div>
-
-              <div id="radio" className={input.radio}>
-                <label htmlFor="radio">
-                  Are you currently driving for any ride-hailing platforms? (eg.
-                  Uber, Taxify, Oride,etc.)
-                </label>
-                <div>
-                  <div className="">
-                    <label htmlFor="male">Yes</label>
-                    <input type="radio" name="service" id="otherservice" />
-                  </div>
-                  <div className="">
-                    <label htmlFor="status">No</label>
-                    <input type="radio" name="service" id="otherservice" />
+                  <div className={input.policy}>
+                    <input type="checkbox" required name="" id="" />I agree to
+                    the Privacy Policy
                   </div>
                 </div>
-                <input
-                  type="text"
-                  name=""
-                  id=""
-                  placeholder="if yes Please Specify the name  "
-                />
-              </div>
-            </form>
+              </form>
+            </Grid>
           </Grid>
-        </Grid>
-      );
-    case 2:
-      return (
-        <Grid container justify="center" spacing={2}>
-          <Grid item xs={8}>
-            <form className={input.files}>
-              <div>
-                <label htmlFor="passport">Passport</label>
-                <input
-                  type="file"
-                  name=""
-                  id="passport"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="License">Driver License</label>
-                <input
-                  type="file"
-                  name=""
-                  id="License"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="cinsuarance">Comprehensive Insuarance</label>
-                <input
-                  type="file"
-                  name=""
-                  id="cinsuarance"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="insuarance">Certificate of Insuarance</label>
-                <input
-                  type="file"
-                  name=""
-                  id="insuarance"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="lasdri">Lasdri</label>
-                <input
-                  type="file"
-                  name=""
-                  id="lasdri"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="interior1">Interior (Photo1)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="interior1"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="interior2">Interior (Photo2)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="interior2"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="interior3">Interior (Photo3)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="interior3"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="interior4">Interior (Photo4)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="interior4"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="exterior1">Exterior (Photo1)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="exterior1"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="exterior2">Exterior (Photo2)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="exterior2"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="exterior3">Exterior (Photo3)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="exterior3"
-                  style={{ width: "80%" }}
-                />
-              </div>
-              <div>
-                <label htmlFor="exterior4">Exterior (Photo4)</label>
-                <input
-                  type="file"
-                  name=""
-                  id="exterior4"
-                  style={{ width: "80%" }}
-                />
-              </div>
-            </form>
+        );
+      case 1:
+        return (
+          <Grid container justify="center" spacing={2}>
+            <Grid item xs={8}>
+              <form className={input.group}>
+                <div className={input.agree}>
+                  <select
+                    name="carType"
+                    id=""
+                    onChange={setdriverInput({
+                      ...driverInput,
+                      carType: e.target.value,
+                    })}
+                    value={(e) => {
+                      e.target.value;
+                    }}
+                  >
+                    <option disabled selected>
+                      {" "}
+                      Car Type
+                    </option>
+                    <option value="primary">Salon</option>
+                    <option value="secondary">SUV</option>
+                    <option value="polytechnic">Mini Bus</option>
+                  </select>
+                  <input type="text" name="" id="" placeholder="Car Name" />
+                  <input type="text" name="" id="" placeholder="Model" />
+                  <input type="number" name="" id="" placeholder="Year" />
+                </div>
+
+                <div id="radio" className={input.radio}>
+                  <div>
+                    <label htmlFor="radio">Marital Status :</label>
+                    <label htmlFor="male">Married</label>
+                    <input type="radio" name="status" id="maritalstatus" />
+                    <label htmlFor="status">Single</label>
+                    <input type="radio" name="status" id="maritalstatus" />
+                  </div>
+                </div>
+
+                <div className={input.name}>
+                  <input
+                    type="text"
+                    required
+                    name=""
+                    id=""
+                    placeholder="Address"
+                  />
+                  <input
+                    type="text"
+                    required
+                    name=""
+                    id=""
+                    placeholder="City"
+                  />
+                  <input
+                    type="text"
+                    required
+                    name=""
+                    id=""
+                    placeholder="State"
+                  />
+                </div>
+                <h3>Emergency Contact</h3>
+                <div className={input.name}>
+                  <input type="text" name="" id="" placeholder="First Name" />
+                  <input type="text" name="" id="" placeholder="Middle Name" />
+                  <input type="text" name="" id="" placeholder="Last Name" />
+                </div>
+                <div>
+                  <input type="tel" name="" id="" placeholder="Phone Number" />
+                  <input type="text" name="" id="" placeholder="Address" />
+                </div>
+
+                <div id="radio" className={input.radio}>
+                  <label htmlFor="radio">
+                    Are you currently driving for any ride-hailing platforms?
+                    (eg. Uber, Taxify, Oride,etc.)
+                  </label>
+                  <div>
+                    <div className="">
+                      <label htmlFor="male">Yes</label>
+                      <input type="radio" name="service" id="otherservice" />
+                    </div>
+                    <div className="">
+                      <label htmlFor="status">No</label>
+                      <input type="radio" name="service" id="otherservice" />
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="if yes Please Specify the name  "
+                  />
+                </div>
+              </form>
+            </Grid>
           </Grid>
-        </Grid>
-      );
-    default:
-      return "Unknown step";
+        );
+      case 2:
+        return (
+          <Grid container justify="center" spacing={2}>
+            <Grid item xs={8}>
+              <form className={input.files}>
+                <div>
+                  <label htmlFor="passport">Passport</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="passport"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="License">Driver License</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="License"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cinsuarance">Comprehensive Insuarance</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="cinsuarance"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="insuarance">Certificate of Insuarance</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="insuarance"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lasdri">Lasdri</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="lasdri"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="interior1">Interior (Photo1)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="interior1"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="interior2">Interior (Photo2)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="interior2"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="interior3">Interior (Photo3)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="interior3"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="interior4">Interior (Photo4)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="interior4"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="exterior1">Exterior (Photo1)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="exterior1"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="exterior2">Exterior (Photo2)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="exterior2"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="exterior3">Exterior (Photo3)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="exterior3"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="exterior4">Exterior (Photo4)</label>
+                  <input
+                    type="file"
+                    name=""
+                    id="exterior4"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+              </form>
+            </Grid>
+          </Grid>
+        );
+      default:
+        return "Unknown step";
+    }
   }
-}
 
-export default function Form() {
   const classes = useStyles();
   const [driverInput, setdriverInput] = useState(driverRequirements);
   const [activeStep, setActiveStep] = React.useState(0);

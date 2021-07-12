@@ -4,6 +4,7 @@ import Passenger from "../components/Passenger";
 import PickCar from "../components/PickCar";
 import Contact from "../components/Contact";
 import PaymentMethod from "../components/PaymentMethod";
+import PriorityPassNext from "../components/PriorityPassNext";
 import Included from "../components/Included";
 import Summary from "../components/Summary";
 
@@ -15,7 +16,7 @@ export default class Booking extends Component {
       <section style={{ width: "80vw", margin: "auto" }}>
         <Grid container spacing={2} justify="center">
           <Grid item sm={8}>
-            <Airport />
+            <PriorityPassNext />
             <PickCar />
             <Passenger />
             <Summary />

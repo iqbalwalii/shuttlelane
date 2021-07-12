@@ -8,11 +8,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .Card {
@@ -39,8 +39,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   font-size: 0.8rem;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -86,16 +86,26 @@
 }
 
 .Card:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(10, 7, 206, 0.527)), to(white));
-  background: linear-gradient(to bottom, rgba(10, 7, 206, 0.527) 60%, white 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(60%, rgba(10, 7, 206, 0.527)),
+    to(white)
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 7, 206, 0.527) 60%,
+    white 100%
+  );
   -webkit-filter: drop-shadow(4px 3px 10px rgba(116, 114, 114, 0.623));
-          filter: drop-shadow(4px 3px 10px rgba(116, 114, 114, 0.623));
+  filter: drop-shadow(4px 3px 10px rgba(116, 114, 114, 0.623));
   border-radius: 5px;
 }
 
 .Card:hover img {
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .Card:hover h3 {

@@ -11,7 +11,13 @@ import {
 } from "@material-ui/icons";
 import next from "../styles/Next.module.css";
 export default class AirportNext extends Component {
+  state = this.props.data;
+  onChangeHandler = (e) => {
+    console.log(["Nameeeee", e.target.name]);
+    this.setState({ ...this.state, [e.target.name]: e.target.value });
+  };
   render() {
+    console.log("state", this.state);
     return (
       <div style={{ marginBottom: "1rem" }}>
         <Card
@@ -37,9 +43,13 @@ export default class AirportNext extends Component {
                 <span>
                   <FlightLand fontSize="small" />
                 </span>
-                <select name="airport" id="dropoffAirport">
+                <select
+                  name="airport"
+                  id="dropoffAirport"
+                  value={this.state?.pickupAirport?.split("+").join(" ")}
+                >
                   <option selected disabled value="null" id="null">
-                    Select Dropoff Airport
+                    Select pickup Airport
                   </option>
                   <option value="Murtala Muhammed International Airport">
                     Murtala Muhammed International Airport
@@ -73,9 +83,11 @@ export default class AirportNext extends Component {
                 </span>
                 <input
                   type="text"
-                  name=""
+                  name="dropoffAddress"
                   id=""
                   placeholder="Drop-off Address"
+                  value={this.state?.dropoffAddress}
+                  onChange={this.onChangeHandler}
                 />
               </div>
             </div>
@@ -84,34 +96,38 @@ export default class AirportNext extends Component {
                 <span>
                   <Today fontSize="small" />
                 </span>
-                <input type="date" name="" id="calendar" />
+                <input
+                  type="date"
+                  name=""
+                  id="calendar"
+                  value={this.state?.dropoffDate}
+                />
               </div>
-
               <div className={next.inputControl}>
                 <span>
-                  <AccessTime fontSize="small" />
+                  <LocalAirport fontSize="small" />
                 </span>
                 <input
-                  type="time"
-                  name=""
-                  id=""
-                  placeholder="Drop-off Address"
+                  type="number"
+                  name="passengers"
+                  id="passengers"
+                  value={this.state?.passengers}
                 />
               </div>
             </div>
             <div className={next.formGroup}>
               <div className={next.inputControl}>
                 <span>
-                  <LocalAirport fontSize="small" />
+                  <AccessTime fontSize="small" />
                 </span>
-                <input type="text" name="" id="" />
+                <input type="time" name="" id="" placeholder="Select time" />
               </div>
 
               <div className={next.inputControl}>
                 <span>
                   <PeopleAlt fontSize="small" />
                 </span>
-                <select name="airport" id="dropoffAirport">
+                {/* <select name="airport" id="dropoffAirport">
                   <option selected disabled value="null" id="null">
                     Select Dropoff Airport
                   </option>
@@ -138,7 +154,7 @@ export default class AirportNext extends Component {
                   <option value="London City Airport">
                     London City Airport
                   </option>
-                </select>
+                </select> */}
               </div>
             </div>
           </form>

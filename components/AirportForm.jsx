@@ -4,7 +4,7 @@ import form from "../styles/Carform.module.css";
 import Link from "next/link";
 
 let intialPickupValues = {
-  pickupAirport: "",
+  pickup4: "",
   dropoffAddress: "",
   dropoffDate: "",
   passengers: 0,
@@ -53,12 +53,11 @@ const AirportForm = () => {
     // formType === "Airport-Pickup"? airportPickupValues={...airportPickupValues, [e.target.id]:  e.target.value}:airportDropoffValues={...airportDropoffValues, [e.target.id]:e.target.value}
     console.log("airportPickupValues:", airportPickupValues);
     // console.log("airportDropoffValues:", airportDropoffValues);
-
+    let data = airportPickupValues;
     router.push({
       pathname: "/booking",
-      query: { user: airportPickupValues },
+      query: data,
     });
-    ss;
   }
 
   return (

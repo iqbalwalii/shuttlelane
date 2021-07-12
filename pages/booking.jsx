@@ -11,14 +11,25 @@ import Summary from "../components/Summary";
 import { Grid } from "@material-ui/core";
 
 const Booking = ({ userData }) => {
+  let data = {};
   const router = useRouter();
   console.log("userSta", userData);
-  console.log(router.asPath);
+  console.log(router.asPath.split("?")[1].split("&"));
+  router.asPath
+    .split("?")[1]
+    .split("&")
+    .forEach((item) => {
+      let entry = item.split("=");
+      data[entry[0]] = entry[1];
+      console.log(entry);
+      console.log(data);
+    });
+  // });
   return (
     <section style={{ width: "80vw", margin: "auto" }}>
       <Grid container spacing={2} justify="center">
         <Grid item sm={8}>
-          <Airport />
+          <Airport data={data} />
           <PickCar />
           <Passenger />
           <Summary />

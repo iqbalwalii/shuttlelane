@@ -131,14 +131,6 @@ a {
   height: 40px;
   object-fit: contain;
 }
-@media screen and (max-width: 1023px) {
-  .btnGrad {
-    width: fit-content;
-  }
-  .homePay > img {
-    margin: 2rem 0;
-  }
-}
 
 .fleetGrid {
   display: grid;
@@ -156,4 +148,17 @@ a {
 }
 .fleetGrid p {
   font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .btnGrad {
+    width: fit-content;
+  }
+  .homePay > img {
+    margin: 2rem 0;
+  }
+  .checkoutForm > div {
+    display: flex;
+    flex-direction: column;
+  }
 }

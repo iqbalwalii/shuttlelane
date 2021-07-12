@@ -6,7 +6,9 @@
   border-radius: 5px;
   margin-right: 0.7rem;
 }
-
+.radio {
+  display: flex;
+}
 .group > div:nth-of-type(odd) {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -161,5 +163,22 @@
   .group > div {
     display: flex;
     flex-direction: column;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+  }
+  .extra {
+    margin: 4rem 0 2rem 0;
+  }
+  .radio {
+    margin: 3rem 0 0 0;
+    font-size: 0.7rem;
+  }
+  .policy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
   }
 }
