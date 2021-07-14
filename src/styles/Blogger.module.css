@@ -1,0 +1,202 @@
+.blogger * {
+	box-sizing: border-box;
+}
+.burger {
+	display: none;
+	flex-direction: column;
+	z-index: 10;
+}
+.blogger {
+	background-color: #fefefe;
+	display: grid;
+	grid-template-columns: 2fr 7fr 2fr;
+
+	font-family: Helvetica, sans-serif;
+	height: 100vh;
+}
+.blogger .aside,
+.blogger .profile {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+.blogger .aside,
+.aside > div {
+	padding-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #f5f7fb;
+}
+.blogger .aside img {
+	width: 60%;
+	margin-bottom: 2rem;
+}
+
+.blogger .profile {
+	padding-top: 1rem;
+	border-left: 1px solid #ececec;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.blogger .actionCard:hover {
+	box-shadow: 5px 5px 20px 4px #9c9c9cc9;
+	color: rgba(0, 0, 0);
+	/* color: #43d84f; */
+}
+
+.blogger .actionCard {
+	padding: 1rem 1.5rem;
+	background-color: #fefefe;
+	box-shadow: 2px 2px 10px #e1e4ee;
+	font-weight: 600;
+	font-size: 1rem;
+	cursor: pointer;
+	margin: 1rem;
+	border: none;
+	outline: none;
+	text-transform: capitalize;
+	width: 100%;
+	transition: all 0.2s ease-in-out;
+	color: rgba(0, 0, 0, 0.6);
+}
+.blogger .mainContent {
+	padding-top: 1rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+.blogger .mainContent > * {
+	width: 90%;
+}
+.blogger .bloggerForm {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+.blogger .postsContainer {
+	overflow-y: scroll;
+	max-height: 80vh;
+}
+.blogger .heading > h1 {
+	color: #8e75ec;
+	text-align: center;
+	text-transform: capitalize;
+}
+.blogger .bloggerPosts {
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	padding: 0rem 1rem;
+	display: grid;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.blogger .bloggerPosts button {
+	padding: 1rem;
+	background-color: #43d84f;
+	box-shadow: 2px 2px 10px #e1e4ee;
+	font-weight: 100;
+	font-size: 1rem;
+	cursor: pointer;
+	margin: 1px;
+	border: none;
+	outline: none;
+	text-transform: capitalize;
+	display: inline-block;
+	color: #fff;
+}
+
+.blogger .profile .profileHeader {
+	display: flex;
+	align-items: center;
+	padding: 0 1rem;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.blogger .profile .profileHeader img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-right: 5px;
+	box-shadow: 0px 5px 20px rgb(150, 150, 150);
+}
+.blogger .profile .profileHeader > h4 {
+	font-weight: 600;
+	text-transform: capitalize;
+	font-size: normal;
+	margin: 0;
+	margin-left: 5px;
+	opacity: 0.5;
+}
+.blogger .profile .profileOverview {
+	padding: 1rem;
+	width: 100%;
+}
+.blogger .profile .profileOverview h3 {
+	color: #8e75ec;
+}
+.blogger .profile .profileOverview .overviewCard {
+	background-color: #f5f7fb;
+	border-radius: 10px;
+	padding: 1rem;
+	width: 90%;
+	text-align: center;
+}
+.blogger .profile .profileOverview .overviewCard h1 {
+	margin: 0;
+	margin-top: 10px;
+}
+.blogger .profile .profileOverview .overviewCard h4 {
+	font-weight: 100;
+	opacity: 0.7;
+	margin: 0;
+	margin-bottom: 10px;
+}
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+	.blogger {
+		grid-template-columns: 1fr;
+		width: 100%;
+	}
+	.blogger .aside > img {
+		width: 100%;
+	}
+	.blogger .aside {
+		height: 40vh;
+		margin-bottom: 1rem;
+		flex-direction: row;
+	}
+
+	.blogger .postsContainer {
+		overflow-y: unset;
+		max-height: initial;
+	}
+	.blogger .mobNav img {
+		margin: 0;
+	}
+	.blogger .mobNav {
+		display: flex;
+		width: 100%;
+		margin-bottom: 1rem;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.blogger .mobNav .burger {
+		display: block;
+	}
+	.blogger .mobNav span {
+		height: 6px;
+		width: 30px;
+		background-color: rgba(0, 0, 0, 0.747);
+		margin-bottom: 4px;
+		display: inline-block;
+	}
+	.blogger .profile {
+		display: none;
+	}
+}
