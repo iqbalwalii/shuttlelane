@@ -22,14 +22,7 @@ const BlogList = ({ posts }) => {
   console.log(posts);
   return (
     <>
-      <section
-        style={{
-          padding: "1rem 2rem 0 7rem",
-          background: "#f8f8f8",
-          width: "100vw",
-        }}
-        className={blog.blogMain}
-      >
+      <section className={blog.blogMain}>
         <Grid container spacing={5} className={blog.cards}>
           {[
             {
@@ -42,7 +35,7 @@ const BlogList = ({ posts }) => {
             },
           ]?.map((post) => {
             return (
-              <Grid key={post._id} item xs={12} sm={4}>
+              <Grid key={post._id} item xs={12} md={6} lg={4}>
                 <BlogCard post={post} />
               </Grid>
             );

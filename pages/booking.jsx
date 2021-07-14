@@ -11,6 +11,12 @@ import Summary from "../components/Summary";
 import { Grid } from "@material-ui/core";
 
 const Booking = ({ userData }) => {
+  const [selectedCar, setSelectedCar] = useState("");
+  const carHandler = (e) => {
+    setSelectedCar(e.target.value);
+    console.log(selectedCar);
+  };
+
   let data = {};
   const router = useRouter();
   console.log("userSta", userData);
@@ -30,7 +36,7 @@ const Booking = ({ userData }) => {
       <Grid container spacing={2} justify="center">
         <Grid item sm={8}>
           <Airport data={data} />
-          <PickCar />
+          <PickCar carHandler={carHandler} selectedCar={selectedCar} />
           <Passenger />
           <Summary />
           <PaymentMethod />

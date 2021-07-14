@@ -120,6 +120,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
+  padding: 2rem;
+}
+.FormAside {
+  overflow: hidden;
+  padding: 2rem;
 }
 /*# sourceMappingURL=Blog.module.css.map */
+@media screen and (max-width: 480px) {
+  .blogMain {
+    flex-direction: column;
+  }
+}

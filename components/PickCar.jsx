@@ -3,25 +3,7 @@ import { Person, Work } from "@material-ui/icons";
 import React, { Component } from "react";
 import pick from "../styles/Pick.module.css";
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
 export default class PickCar extends Component {
-  state = {
-    selectedCar: " ",
-    selectedPaymentOption: " ",
-  };
-  paymetOptionHandler(e) {
-    console.log(e.target.value);
-    this.setState({
-      selectedCar: e.target.value,
-    });
-  }
-  carHandler(e) {
-    console.log(e.target.value);
-    this.setState({
-      selectedCar: e.target.value,
-    });
-  }
-
   render() {
     return (
       <div style={{ marginBottom: "1rem" }}>
@@ -40,7 +22,7 @@ export default class PickCar extends Component {
               textTransform: "uppercase",
             }}
           >
-            Pick Your Car{" "}
+            Pick Your Car
           </h4>
         </div>
 
@@ -91,13 +73,10 @@ export default class PickCar extends Component {
             <button
               value="Economy"
               onClick={this.carHandler}
+              className="btnNotSelected"
               style={{
-                outline: "none",
-                backgroundColor: "#e3b645",
-                color: "#212121",
-                padding: ".5rem 1rem",
-                borderRadius: "7px",
-                border: "none",
+                backgroundColor:
+                  this.props.selectedCar === "Economy" ? "orange" : "",
               }}
             >
               Select
@@ -154,14 +133,11 @@ export default class PickCar extends Component {
             <button
               value="Business"
               onClick={this.carHandler}
-              style={{
-                outline: "none",
-                backgroundColor: "#e3b645",
-                color: "#212121",
-                padding: ".5rem 1rem",
-                borderRadius: "7px",
-                border: "none",
-              }}
+              className={
+                this.state.selectedCar === this.value
+                  ? "btnChecked"
+                  : "btnNotSelected"
+              }
             >
               Select
             </button>
@@ -207,7 +183,7 @@ export default class PickCar extends Component {
             </div>
             <Typography variant="body1" style={{ opacity: ".7" }}>
               Mercedes Benz E350, BMW Grancoupe 428i, BMW 523i, Toyota Camry
-              2018, Jagua XF, Mercedez Benz E200, Mercedez Benz E300, etc.
+              2018, Jaguar XF, Mercedez Benz E200, Mercedez Benz E300, etc.
             </Typography>
           </div>
           <div className={pick.buttons}>
@@ -217,14 +193,11 @@ export default class PickCar extends Component {
             <button
               value="Executive"
               onClick={this.carHandler}
-              style={{
-                outline: "none",
-                backgroundColor: "#e3b645",
-                color: "#212121",
-                padding: ".5rem 1rem",
-                borderRadius: "7px",
-                border: "none",
-              }}
+              className={
+                this.state.selectedCar === this.value
+                  ? "btnChecked"
+                  : "btnNotSelected"
+              }
             >
               Select
             </button>
@@ -280,14 +253,11 @@ export default class PickCar extends Component {
             <button
               value="Luxury"
               onClick={this.carHandler}
-              style={{
-                outline: "none",
-                backgroundColor: "#e3b645",
-                color: "#212121",
-                padding: ".5rem 1rem",
-                borderRadius: "7px",
-                border: "none",
-              }}
+              className={
+                this.state.selectedCar === this.value
+                  ? "btnChecked"
+                  : "btnNotSelected"
+              }
             >
               Select
             </button>
@@ -342,14 +312,11 @@ export default class PickCar extends Component {
             <button
               value="Shuttle"
               onClick={this.carHandler}
-              style={{
-                outline: "none",
-                backgroundColor: "#e3b645",
-                color: "#212121",
-                padding: ".5rem 1rem",
-                borderRadius: "7px",
-                border: "none",
-              }}
+              className={
+                this.state.selectedCar === this.value
+                  ? "btnChecked"
+                  : "btnNotSelected"
+              }
             >
               Select
             </button>

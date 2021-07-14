@@ -8,17 +8,18 @@ import {
   Typography,
 } from "@material-ui/core";
 import ContactForm from "../components/ContactForm";
+import blog from "../styles/Blog.module.css";
 
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH || " ";
 const BlogAside = () => {
   return (
-    <Grid item xs={3} style={{ padding: "0rem 1rem" }}>
+    <Grid item xs={12} sm={5} className={blog.FormAside}>
       <Card>
         <CardMedia>
           <img
             src={`${prefix}/assets/images/shuttle.png`}
             alt="logo"
-            style={{ width: "200px", marginTop: "10px" }}
+            style={{ width: "200px", marginTop: "10px", padding: "1rem" }}
           />
         </CardMedia>
         <CardContent>
