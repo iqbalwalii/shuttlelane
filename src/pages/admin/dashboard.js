@@ -94,8 +94,8 @@ const dashboard = () => {
   return (
     <Grid
       container
-      justifyContent"center"
-      aligh-items="flex-start"
+      justifyContent="center"
+      align-items="flex-start"
       className={styles.container}
     >
       <Grid item sm={2}>

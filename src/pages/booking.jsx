@@ -10,9 +10,9 @@ import Summary from "../components/Summary";
 
 import { Grid } from "@material-ui/core";
 
-const bookingObj = {};
+//   variables
+let bookingObj = {};
 
-//   component
 let fields = {
   dropoffAddress: "",
   dropoffDate: "",
@@ -91,7 +91,10 @@ const Booking = ({ userData }) => {
             handler={setTotal}
             subTotal={carRates[selectedCar] * 5}
           />
-          <PaymentMethod total={total} />
+          <PaymentMethod
+            bookingData={bookingObj}
+            total={carRates[selectedCar] * 5}
+          />
         </Grid>
         <Grid item sm={3} style={{ marginTop: "2rem" }}>
           {/* <Summary /> */}
