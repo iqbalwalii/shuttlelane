@@ -51,17 +51,19 @@ const Booking = ({ userData }) => {
   let data = {};
 
   const router = useRouter();
-  console.log("userSta", userData);
-  console.log(router.asPath.split("?")[1].split("&"));
-  router.asPath
-    .split("?")[1]
-    .split("&")
-    .forEach((item) => {
-      let entry = item.split("=");
-      data[entry[0]] = entry[1];
-      console.log(entry);
-      console.log(data);
-    });
+  try {
+    router.asPath
+      .split("?")[1]
+      .split("&")
+      .forEach((item) => {
+        let entry = item.split("=");
+        data[entry[0]] = entry[1];
+        console.log(entry);
+        console.log(data);
+      });
+  } catch (error) {
+    console.log("split err", error);
+  }
 
   return (
     <section style={{ width: "80vw", margin: "auto" }}>
