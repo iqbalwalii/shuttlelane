@@ -6,7 +6,7 @@ function createBooking(data, paymentMethod, amount) {
   console.log("SUBMOISSSSSSs", paymentMethod);
   console.log(paymentMethod, data, amount);
 
-  fetch("http://localhost:3001/api/booking/airportpick", {
+  fetch("http://localhost:3001/api/booking/pickup", {
     method: "POST",
     headers: {
       Accept: "application/json",

@@ -24,7 +24,7 @@ const dashboard = () => {
     fetch("http://localhost:3001/api/booking/pickup")
       .then((res) => res.json())
       .then((data) => {
-        setPickupBookings(data.length);
+        setPickupBookings(data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -41,7 +41,7 @@ const dashboard = () => {
       </Grid>
       <Grid item container justifyContent="space-evenly" sm={10}>
         {state == "Overview" ? (
-          <Overview />
+          <Overview pickupCount={pickupBookings.length} />
         ) : state.includes("Car") ? (
           <CarBooking />
         ) : state.includes("Airport") ? (
