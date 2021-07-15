@@ -108,7 +108,10 @@ a {
   border-bottom-left-radius: 5px;
   background-color: #e9ecef;
 }
-
+.checkoutForm {
+  width: "50vw";
+  margin: "2rem auto";
+}
 .checkoutForm .inputControl > * {
   border: none;
   outline: none;
@@ -227,6 +230,19 @@ a {
 /* slider end */
 /* slider end */
 /* slider end */
+.number {
+  display: flex;
+}
+.number > select {
+  width: 15%;
+  height: inherit;
+  height: 5vh;
+}
+.number > input {
+  border: 1px solid rgba(204, 204, 204, 0.76);
+  height: 5vh;
+  border-radius: 5%;
+}
 @media screen and (max-width: 1023px) {
   .btnGrad {
     width: fit-content;
@@ -240,5 +256,18 @@ a {
   }
   .direct > img {
     width: 50%;
+  }
+  .checkoutForm {
+    width: 100%;
+  }
+  .number > select {
+    width: 40%;
+    height: inherit;
+    height: 5vh;
+  }
+  .number > input {
+    border: 1px solid rgba(204, 204, 204, 0.76);
+    height: 5vh;
+    border-radius: 5%;
   }
 }

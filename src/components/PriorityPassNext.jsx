@@ -8,7 +8,7 @@ import {
   FlightLand,
 } from "@material-ui/icons";
 
-export default class CarHireNext extends Component {
+export default class PriorityPassNext extends Component {
   state = {
     name: "",
     surname: "",
@@ -22,10 +22,7 @@ export default class CarHireNext extends Component {
   render() {
     return (
       <div>
-        <form
-          className="checkoutForm"
-          style={{ width: "50vw", margin: "2rem auto" }}
-        >
+        <form className="checkoutForm">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className="inputControl">
               <span>
