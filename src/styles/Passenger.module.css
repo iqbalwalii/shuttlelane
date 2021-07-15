@@ -65,6 +65,6 @@
   .checkoutForm {
     padding: 2rem;
     width: 80%;
-    margin: auto;
+    width: 100%;
   }
 }
