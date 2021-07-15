@@ -1,28 +1,34 @@
 .container {
-	width: 80vw;
-	margin: 7rem auto;
+  width: 80vw;
+  margin: 7rem auto;
 }
 .container p {
-	font-size: 1.05rem;
-	color: #6f737b;
+  font-size: 1.05rem;
+  color: #6f737b;
 }
 .container .content {
-	margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .container li {
-	font-size: 1rem;
-	font-weight: 400;
-	color: #000000bf;
-	margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000000bf;
+  margin-bottom: 1rem;
+}
+.content {
+  margin-left: 2rem;
 }
 
 @media screen and (max-width: 480px) {
-	.container {
-		width: 100vw;
-		margin-bottom: 0rem;
-	}
-	.container .content {
-		margin-left: 0;
-	}
+  .container {
+    width: 100vw;
+    margin-bottom: 0rem;
+  }
+  .container .content {
+    margin-left: 0;
+  }
+  .right {
+    margin-left: 0;
+  }
 }

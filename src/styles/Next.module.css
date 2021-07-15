@@ -50,6 +50,9 @@
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
+.checkoutForm {
+  padding: 1.4rem;
+}
 /*# sourceMappingURL=Next.module.css.map */
 @media screen and (max-width: 480px) {
   .formGroup {

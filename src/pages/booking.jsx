@@ -15,7 +15,7 @@ let bookingObj = {};
 
 let fields = {
   dropoffAddress: "",
-  dropoffDate: "",
+  arrivalDate: "",
   passengers: "",
   pickupAirport: "",
   flightNumber: "",
@@ -69,7 +69,7 @@ const Booking = ({ userData }) => {
   };
 
   bookingObj = {
-    ...selectedCar,
+    carType: selectedCar,
     ...passengerDetails,
     ...data,
   };
@@ -93,7 +93,7 @@ const Booking = ({ userData }) => {
           />
           <PaymentMethod
             bookingData={bookingObj}
-            total={carRates[selectedCar] * 5}
+            amount={carRates[selectedCar] * 5}
           />
         </Grid>
         <Grid item sm={3} style={{ marginTop: "2rem" }}>

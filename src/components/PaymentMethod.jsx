@@ -2,15 +2,44 @@ import { Grid } from "@material-ui/core";
 import { useState } from "react";
 import styles from "../styles/Summary.module.css";
 
-function validataDate(data) {}
+function createBooking(data, paymentMethod, amount) {
+  console.log("SUBMOISSSSSSs", paymentMethod);
+  console.log(paymentMethod, data, amount);
+
+  //   const response = fetch("http://localhost:3001/api/booking")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log("result fro server", data);
+  //       return data;
+  //     })
+  //     .catch((err) => {
+  //       console.log("err in catch", err);
+  //     });
+  //   return response;
+  return "created";
+}
+function validataDate(data) {
+  console.log("validate data", data);
+  return Object.values(data).includes("") || Object.values(data).includes(" ");
+}
+
 const PaymentMethod = ({ total, bookingData }) => {
-  let [selectedPayment, setSelectedPayment] = useState(" ");
+  let [selectedPayment, setSelectedPayment] = useState("");
 
   function paymentOptionHandler(e) {
     console.log(e.target.id);
     setSelectedPayment(e.target.id);
   }
-  const onSubmitHandler = () => {};
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    const verified = selectedPayment !== "" ? validataDate(bookingData) : true;
+    if (!verified) {
+      const response = createBooking(bookingData, selectedPayment, amount);
+      console.log("VACK", response);
+    } else {
+      console.log("validation Error");
+    }
+  };
   return (
     <div className={styles.card}>
       <h4>Select Payment Method</h4>
@@ -46,7 +75,7 @@ const PaymentMethod = ({ total, bookingData }) => {
           }}
         ></div>
       </div>
-      <button className="btnGrad" type="submit">
+      <button className="btnGrad" type="submit" onClick={onSubmitHandler}>
         Proceed to Payment
       </button>
     </div>

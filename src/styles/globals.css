@@ -85,6 +85,9 @@ a {
   width: 300px;
   margin-bottom: 2rem;
 }
+.checkoutForm {
+  padding: 1.4rem;
+}
 
 .checkoutForm .inputControl select,
 .checkoutForm .inputControl input {
@@ -238,6 +241,7 @@ a {
   height: 5vh;
   border-radius: 5%;
 }
+
 @media screen and (max-width: 480px) {
   .btnGrad {
     width: fit-content;
@@ -254,9 +258,12 @@ a {
   }
   .checkoutForm {
     width: 100%;
-    margin: 6rem auto 2rem auto;
+    padding: 1rem;
   }
-
+  .marginAbove {
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+  }
   .number > select {
     width: 40%;
     height: inherit;

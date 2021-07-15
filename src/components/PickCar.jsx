@@ -17,7 +17,7 @@ const PickCar = ({ car, handler }) => {
           style={{
             margin: "0",
             padding: "0",
-            fontFamily: "poppins",
+
             textTransform: "uppercase",
           }}
         >

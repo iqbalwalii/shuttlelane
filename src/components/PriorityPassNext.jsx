@@ -21,7 +21,17 @@ export default class PriorityPassNext extends Component {
   };
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "6rem" }}>
+        <h4
+          style={{
+            margin: "0",
+            paddingLeft: "1.4rem",
+            textTransform: "uppercase",
+          }}
+        >
+          Priority Pass Info
+        </h4>
+        <hr />
         <form className="checkoutForm">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className="inputControl">

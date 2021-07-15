@@ -32,15 +32,11 @@ export default class HotelForm extends Component {
   };
   render() {
     return (
-      <div style={{ marginTop: "6rem" }}>
+      <div className="marginAbove">
         <h2 style={{ color: "#000080", textAlign: "center" }}>
           Hotel Transfer Solution
         </h2>
-        <form
-          className="checkoutForm"
-          style={{ width: "50vw", margin: "2rem auto" }}
-          onSubmit={this.onSubmitHandler}
-        >
+        <form onSubmit={this.onSubmitHandler} className="checkoutForm">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className="inputControl">
               <span>

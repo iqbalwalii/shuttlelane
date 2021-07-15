@@ -17,10 +17,10 @@ const index = () => {
       style={{ width: "80vw", margin: "7rem auto" }}
     >
       <Grid container justifyContent="center" spacing={3}>
-        <Grid item sm={3}>
+        <Grid item xs={11} sm={3} style={{ padding: "0px" }}>
           <Sidebar heading="Company" routes={routes} />
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={8} className={about.content}>
           <Typography variant="h5" gutterBottom color="textPrimary">
             About Shuttlelane
           </Typography>

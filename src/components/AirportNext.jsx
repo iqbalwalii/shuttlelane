@@ -18,10 +18,7 @@ const AirportNext = ({ data, setData }) => {
   };
   return (
     <div style={{ marginBottom: "1rem" }}>
-      <Card
-        className={next.checkoutForm}
-        style={{ backgroundColor: "#fff", marginTop: "1rem" }}
-      >
+      <Card style={{ backgroundColor: "#fff", marginTop: "6rem" }}>
         <div
           style={{
             backgroundColor: "#fff",
@@ -33,7 +30,7 @@ const AirportNext = ({ data, setData }) => {
             Airport {data?.formType}Info
           </h4>
         </div>
-        <form className="checkoutForm">
+        <form className={next.checkoutForm}>
           <div className={next.formGroup}>
             <div className={next.inputControl}>
               <span>
@@ -92,9 +89,9 @@ const AirportNext = ({ data, setData }) => {
               </span>
               <input
                 type="date"
-                name="dropoffDate"
+                name="arrivalDate"
                 id="dropoffDate"
-                value={data?.dropoffDate}
+                value={data?.arriv}
                 onChange={onChangeHandler}
               />
             </div>
@@ -139,17 +136,6 @@ const AirportNext = ({ data, setData }) => {
                   </option>
                 </select> */}
             </div>
-            <div className={next.inputControl}>
-              <span>
-                <LocalAirport fontSize="small" />
-              </span>
-              <input
-                type="text"
-                name="flightNumber"
-                onChange={onChangeHandler}
-                value={data?.flightNumber}
-              />
-            </div>
           </div>
           <div className={next.formGroup}>
             <div className={next.inputControl}>
@@ -163,6 +149,17 @@ const AirportNext = ({ data, setData }) => {
                 id="time"
                 placeholder="Select time"
                 onChange={onChangeHandler}
+              />
+            </div>
+            <div className={next.inputControl}>
+              <span>
+                <LocalAirport fontSize="small" />
+              </span>
+              <input
+                type="text"
+                name="flightNumber"
+                onChange={onChangeHandler}
+                value={data?.flightNumber}
               />
             </div>
           </div>

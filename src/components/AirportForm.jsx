@@ -6,7 +6,7 @@ import Link from "next/link";
 let intialPickupValues = {
   pickupAirport: "",
   dropoffAddress: "",
-  dropoffDate: "",
+  arrivalDate: "",
   passengers: 0,
 };
 let intialDropoffValues = {
@@ -229,9 +229,9 @@ const AirportForm = () => {
               onFocus={(e) => {
                 e.target.type = "date";
               }}
-              id="dropoffDate"
+              id="arrivalDate"
               onChange={onChangeHandler}
-              value={airportPickupValues.dropoffDate}
+              value={airportPickupValues.arrivalDate}
             />
             <input
               required

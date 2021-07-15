@@ -13,7 +13,7 @@ export default class CarHireNext extends Component {
   render() {
     return (
       <div>
-        <form className="checkoutForm">
+        <form className="checkoutForm marginAbove">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className="inputControl">
               <span>
