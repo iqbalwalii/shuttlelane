@@ -11,7 +11,7 @@ const createOne = async (req, res) => {
     if (!doc) {
       return res.status(200).json({ error: "Something went wrong" });
     }
-    return res.status(201).json({ data: doc, message: "user created" });
+    return res.status(201).json({ data: doc, message: "Booking Added" });
   } catch (error) {
     return res.status(500).json({ error });
   }

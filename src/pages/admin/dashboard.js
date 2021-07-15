@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Grid } from "@material-ui/core";
 
@@ -15,87 +15,25 @@ import styles from "../../styles/Dashboard.module.css";
 
 const dashboard = () => {
   const [state, setState] = useState("Overview");
+  const [PickupBookings, setPickupBookings] = useState([]);
   const onStateChange = (value) => {
     console.log("value", value);
     setState(value);
   };
+  useEffect(() => {
+    fetch("http://localhost:3001/api/booking/pickup")
+      .then((res) => res.json())
+      .then((data) => {
+        setPickupBookings(data.length);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-  // const nameRef = useRef();
-  // const emailRef = useRef();
-  // const passwordRef = useRef();
-  // const router = useRouter();
-  // const onSubmitHandler = (e) => {
-  // 	e.preventDefault();
-  // 	let data = {};
-  // 	let response;
-  // 	data.name = nameRef.current.value;
-  // 	data.email = emailRef.current.value;
-  // 	data.password = passwordRef.current.value;
-
-  // 	try {
-  // 		fetch('http://shuttlelane.herokuapp.com/api/signup', {
-  // 			method: 'POST',
-  // 			headers: {
-  // 				Accept: 'application/json',
-  // 				'Content-Type': 'application/json',
-  // 			},
-  // 			body: JSON.stringify(data),
-  // 		})
-  // 			.then((res) => res.json())
-  // 			.then((res) => {
-  // 				response = res;
-  // 				console.log(res);
-  // 				router.push('/admin');
-  // 			});
-  // 	} catch (error) {
-  // 		console.log(error);
-  // 	}
-  // 	console.log('outside', response);
-  // };
-  // return (
-  // 	<>
-  // 		{/* <div>Welcome to admin dashboard</div>
-  // 		<form
-  // 			onSubmit={onSubmitHandler}
-  // 			style={{
-  // 				display: 'flex',
-  // 				justifyContent: 'center',
-  // 				width: '70vw',
-  // 			}}
-  // 		>
-  // 			<input
-  // 				type='text'
-  // 				name='name'
-  // 				id='name'
-  // 				placeholder='name'
-  // 				required
-  // 				ref={nameRef}
-  // 			/>
-  // 			<input
-  // 				type='email'
-  // 				name='email'
-  // 				id='email'
-  // 				placeholder='email'
-  // 				required
-  // 				ref={emailRef}
-  // 			/>
-  // 			<input
-  // 				type='password'
-  // 				name='password'
-  // 				id='password'
-  // 				placeholder='password'
-  // 				required
-  // 				ref={passwordRef}
-  // 			/>
-  // 			<input type='submit' value='submit' />
-  // 		</form> */}
-  // 	</>
-  // );
   return (
     <Grid
       container
       justifyContent="center"
-      align-items="flex-start"
+      aligh-items="flex-start"
       className={styles.container}
     >
       <Grid item sm={2}>

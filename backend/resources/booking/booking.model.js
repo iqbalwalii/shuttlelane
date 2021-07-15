@@ -3,14 +3,14 @@ const shortid = require("shortid");
 
 const bookingSchema = new mongoose.Schema(
   {
-    transferType: {
+    formType: {
       type: String,
       required: true,
     },
     carType: {
       required: true,
       type: String,
-      enum: ["Bussiness", "Economy", "Luxury", "Executive", "Shuttle"],
+      enum: ["Business", "Economy", "Luxury", "Executive", "Shuttle"],
     },
     pickupAirport: {
       type: String,
@@ -20,7 +20,7 @@ const bookingSchema = new mongoose.Schema(
       trim: true,
     },
     time: {
-      type: Date,
+      type: String,
     },
     arrivalDate: {
       type: Date,
@@ -60,6 +60,9 @@ const bookingSchema = new mongoose.Schema(
       default: shortid.generate,
     },
     amount: {
+      type: String,
+    },
+    paymentMethod: {
       type: String,
     },
     flightNumber: {

@@ -6,16 +6,26 @@ function createBooking(data, paymentMethod, amount) {
   console.log("SUBMOISSSSSSs", paymentMethod);
   console.log(paymentMethod, data, amount);
 
-  //   const response = fetch("http://localhost:3001/api/booking")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log("result fro server", data);
-  //       return data;
-  //     })
-  //     .catch((err) => {
-  //       console.log("err in catch", err);
-  //     });
-  //   return response;
+  fetch("http://localhost:3001/api/booking/airportpick", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...data,
+      amount: amount,
+      paymentMethod: paymentMethod,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("result fro server", data);
+      return data;
+    })
+    .catch((err) => {
+      console.log("err in catch", err);
+    });
   return "created";
 }
 function validataDate(data) {
