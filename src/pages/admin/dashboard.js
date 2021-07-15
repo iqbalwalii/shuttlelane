@@ -15,7 +15,7 @@ import styles from "../../styles/Dashboard.module.css";
 
 const dashboard = () => {
   const [state, setState] = useState("Overview");
-  const [PickupBookings, setPickupBookings] = useState([]);
+  const [pickupBookings, setPickupBookings] = useState([]);
   const onStateChange = (value) => {
     console.log("value", value);
     setState(value);
@@ -33,7 +33,7 @@ const dashboard = () => {
     <Grid
       container
       justifyContent="center"
-      aligh-items="flex-start"
+      alighItems="flex-start"
       className={styles.container}
     >
       <Grid item sm={2}>
