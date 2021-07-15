@@ -25,44 +25,26 @@ const PickCar = ({ car, handler }) => {
         </h4>
       </div>
 
+      {/* Economy  */}
+
       <Card className={pick.carCard}>
         <div className={pick.image}>
           <img src={`${prefix}/assets/images/eco.png`} alt="" />
         </div>
         <div className={pick.description}>
           <Typography variant="h6">Economy</Typography>
-          <div
-            style={{
-              background: "#f5f5f5",
-              width: "fit-content",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: " 0.1rem 0.3rem",
-              transform: "scale(.85)",
-            }}
-          >
+          <div className={pick.details}>
+            <span
+              style={{
+                marginRight: ".2rem",
+              }}
+            >
+              <Person fontSize="small" />
+              {2}
+            </span>
             <span>
-              <span
-                style={{
-                  marginRight: ".2rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: " center",
-                }}
-              >
-                <Person fontSize="small" />
-                {2}
-              </span>
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                }}
-              >
-                <Work fontSize="small" />
-                {4}
-              </span>
+              <Work fontSize="small" />
+              {4}
             </span>
           </div>
           <Typography variant="body1" style={{ opacity: ".7" }}>
@@ -95,38 +77,26 @@ const PickCar = ({ car, handler }) => {
         </div>
         <div className={pick.description}>
           <Typography variant="h6">Business</Typography>
-          <div
-            style={{
-              background: "#f5f5f5",
-              width: "fit-content",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: " 0.1rem 0.3rem",
-              transform: "scale(.85)",
-            }}
-          >
-            <span>
-              <span
-                style={{
-                  marginRight: ".2rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: " center",
-                }}
-              >
-                <Person fontSize="small" />
-                {4}
-              </span>
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                }}
-              >
-                <Work fontSize="small" />
-                {3}
-              </span>
+          <div className={pick.details}>
+            <span
+              style={{
+                marginRight: ".2rem",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: " center",
+              }}
+            >
+              <Person fontSize="small" />
+              {4}
+            </span>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              <Work fontSize="small" />
+              {3}
             </span>
           </div>
           <Typography variant="body1" style={{ opacity: ".7" }}>
@@ -159,38 +129,26 @@ const PickCar = ({ car, handler }) => {
         </div>
         <div className={pick.description}>
           <Typography variant="h6">Executive</Typography>
-          <div
-            style={{
-              background: "#f5f5f5",
-              width: "fit-content",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: " 0.1rem 0.3rem",
-              transform: "scale(.85)",
-            }}
-          >
-            <span>
-              <span
-                style={{
-                  marginRight: ".2rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: " center",
-                }}
-              >
-                <Person fontSize="small" />
-                {4}
-              </span>
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                }}
-              >
-                <Work fontSize="small" />
-                {2}
-              </span>
+          <div className={pick.details}>
+            <span
+              style={{
+                marginRight: ".2rem",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: " center",
+              }}
+            >
+              <Person fontSize="small" />
+              {4}
+            </span>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              <Work fontSize="small" />
+              {2}
             </span>
           </div>
           <Typography variant="body1" style={{ opacity: ".7" }}>
@@ -223,38 +181,26 @@ const PickCar = ({ car, handler }) => {
         </div>
         <div className={pick.description}>
           <Typography variant="h6">Luxury</Typography>
-          <div
-            style={{
-              background: "#f5f5f5",
-              width: "fit-content",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: " 0.1rem 0.3rem",
-              transform: "scale(.85)",
-            }}
-          >
-            <span>
-              <span
-                style={{
-                  marginRight: ".2rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: " center",
-                }}
-              >
-                <Person fontSize="small" />
-                {4}
-              </span>
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                }}
-              >
-                <Work fontSize="small" />
-                {3}
-              </span>
+          <div className={pick.details}>
+            <span
+              style={{
+                marginRight: ".2rem",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: " center",
+              }}
+            >
+              <Person fontSize="small" />
+              {4}
+            </span>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              <Work fontSize="small" />
+              {3}
             </span>
           </div>
           <Typography variant="body1" style={{ opacity: ".7" }}>
@@ -287,38 +233,26 @@ const PickCar = ({ car, handler }) => {
         </div>
         <div className={pick.description}>
           <Typography variant="h6">Shuttle</Typography>
-          <div
-            style={{
-              background: "#f5f5f5",
-              width: "fit-content",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: " 0.1rem 0.3rem",
-              transform: "scale(.85)",
-            }}
-          >
-            <span>
-              <span
-                style={{
-                  marginRight: ".2rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: " center",
-                }}
-              >
-                <Person fontSize="small" />
-                {4}
-              </span>
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                }}
-              >
-                <Work fontSize="small" />
-                {3}
-              </span>
+          <div className={pick.details}>
+            <span
+              style={{
+                marginRight: ".2rem",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: " center",
+              }}
+            >
+              <Person fontSize="small" />
+              {4}
+            </span>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              <Work fontSize="small" />
+              {3}
             </span>
           </div>
           <Typography variant="body1" style={{ opacity: ".7" }}>

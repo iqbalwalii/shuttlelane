@@ -12,13 +12,10 @@ import {
 import next from "../styles/Next.module.css";
 
 const AirportNext = ({ data, setData }) => {
-  console.log(data);
   const onChangeHandler = (e) => {
-    console.log(["Nameeeee", e.target.name]);
+    console.log("Nameeeee", e.target.name, e.target.value);
     setData({ ...data, [e.target.name]: e.target.value });
   };
-
-  console.log("data", data);
   return (
     <div style={{ marginBottom: "1rem" }}>
       <Card
@@ -147,7 +144,7 @@ const AirportNext = ({ data, setData }) => {
                 <LocalAirport fontSize="small" />
               </span>
               <input
-                type="number"
+                type="text"
                 name="flightNumber"
                 onChange={onChangeHandler}
                 value={data?.flightNumber}

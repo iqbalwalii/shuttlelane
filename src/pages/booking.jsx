@@ -18,11 +18,26 @@ let fields = {
   dropoffDate: "",
   passengers: "",
   pickupAirport: "",
-
   flightNumber: "",
 };
+const carRates = {
+  Luxury: "2000",
+  Executive: "1500",
+  Economy: "1400",
+  Shuttle: "1300",
+  Business: "1000",
+};
+const passengerFields = {
+  title: "",
+  firstName: "",
+  lastName: "",
+  email: "",
+  countryCode: "",
+  mobile: "",
+};
+// COMPONENT
+
 const Booking = ({ userData }) => {
-  console.log("USERDATA:- ", userData);
   const router = useRouter();
   try {
     router.asPath
@@ -35,25 +50,11 @@ const Booking = ({ userData }) => {
   } catch (error) {
     console.log("split err", error);
   }
-  console.log("USERDATA FIELDS:- ", fields);
-  const carRates = {
-    Luxury: "2000",
-    Executive: "1500",
-    Ecomnomy: "1400",
-    Shuttle: "1300",
-    Business: "1000",
-  };
+
   const [data, setData] = useState(fields);
   const [selectedCar, setSelectedCar] = useState("");
   const [total, setTotal] = useState("");
-  const [passengerDetails, setPassengerDetails] = useState({
-    title: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    countryCode: "",
-    mobile: "",
-  });
+  const [passengerDetails, setPassengerDetails] = useState(passengerFields);
 
   const carHandler = (e) => {
     setSelectedCar(() => {
@@ -67,10 +68,15 @@ const Booking = ({ userData }) => {
     });
   };
 
-  bookingObj.selectedCar = selectedCar;
+  bookingObj = {
+    ...selectedCar,
+    ...passengerDetails,
+    ...data,
+  };
 
   console.log(bookingObj);
   console.log("passengerDetails", passengerDetails);
+  console.log("Airport Details", data);
 
   return (
     <section style={{ width: "80vw", margin: "auto" }}>
@@ -83,9 +89,9 @@ const Booking = ({ userData }) => {
             title="Airport Transfer"
             total={carRates[selectedCar]}
             handler={setTotal}
-            subTotal={total * 5}
+            subTotal={carRates[selectedCar] * 5}
           />
-          <PaymentMethod />
+          <PaymentMethod total={total} />
         </Grid>
         <Grid item sm={3} style={{ marginTop: "2rem" }}>
           {/* <Summary /> */}
