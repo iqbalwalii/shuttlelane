@@ -6,25 +6,8 @@ const getAll = async (req, res) => {
 const createOne = async (req, res) => {
   console.log("Create One Booking ");
 
-  const {
-    arrivalDate,
-    time,
-    dropoffAddress,
-    pickupAirport,
-    passengers,
-    firstName,
-    email,
-    lastName,
-    mobile,
-    flightNumber,
-    selectedCar,
-    title,
-    countryCode,
-    title,
-  } = req.body;
-
   try {
-    const doc = await Booking.create({req.body});
+    const doc = await Booking.create(req.body);
     if (!doc) {
       return res.status(200).json({ error: "Something went wrong" });
     }

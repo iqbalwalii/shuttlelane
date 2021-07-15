@@ -23,7 +23,7 @@ function validataDate(data) {
   return Object.values(data).includes("") || Object.values(data).includes(" ");
 }
 
-const PaymentMethod = ({ total, bookingData }) => {
+const PaymentMethod = ({ amount, bookingData }) => {
   let [selectedPayment, setSelectedPayment] = useState("");
 
   function paymentOptionHandler(e) {
