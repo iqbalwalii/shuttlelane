@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import request from "../api/request";
 import axios from "axios";
 import {
   Business,
