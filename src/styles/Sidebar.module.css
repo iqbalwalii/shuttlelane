@@ -1,0 +1,34 @@
+.heading {
+	margin-bottom: 5px;
+	padding: 8px 1px;
+	padding-left: 1rem;
+}
+.Menu {
+	border-left: 4px solid #262471;
+}
+
+.Menu li {
+	margin-bottom: 0;
+}
+.Menu li a {
+	padding: 8px 1px;
+}
+
+.Menu li:hover {
+	background-color: #262471;
+	color: #fff;
+}
+/*# sourceMappingURL=Sidebar.module.css.map */
+@media screen and (max-width: 480px) {
+	.heading {
+		padding: 0 1rem;
+		font-size: 0.8rem;
+	}
+	.Menu li {
+		margin-bottom: 0;
+	}
+	.Menu li a {
+		padding: 0;
+		font-size: 0.9rem;
+	}
+}

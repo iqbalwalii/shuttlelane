@@ -1,0 +1,58 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: red;
+	height: 80vh;
+	width: 100vw;
+	overflow: hidden;
+}
+.fleet {
+	min-height: 95vh;
+	margin: 2rem;
+	overflow: hidden;
+	padding: 4rem;
+	width: 70%;
+	margin: auto;
+	text-align: center;
+}
+.works {
+	padding: 4rem 1.5rem;
+	background-color: #262471;
+	overflow: hidden;
+	display: flex;
+	min-height: 90vh;
+}
+.choose {
+	min-height: 85vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.reviews {
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #f2f2f2;
+}
+.reviewCard {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	transition: all 0.3s ease-in-out;
+}
+.reviewCard:hover {
+	transform: scale(1.07);
+	box-shadow: 2px 3px 3px rgb(139, 139, 139);
+}
+
+@media screen and (max-width: 480px) {
+	.fleet {
+		overflow: initial;
+		width: 100%;
+		padding: 3rem 2;
+	}
+}

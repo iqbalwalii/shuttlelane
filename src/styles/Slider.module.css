@@ -1,0 +1,42 @@
+.direct {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.direct > img {
+	width: 55%;
+}
+
+.direct p {
+	color: #3b3b3b;
+	width: 70%;
+	text-align: center;
+	font-size: 1rem;
+	margin: 0;
+	padding: 0;
+}
+
+.direct p:first-of-type {
+	font-size: 1rem;
+	color: #ecab06;
+	margin-bottom: 0.5rem;
+}
+
+.direct h4 {
+	margin: 0;
+	margin-top: 2rem;
+	padding: 0;
+	color: #fff;
+}
+/*# sourceMappingURL=Slider.module.css.map */

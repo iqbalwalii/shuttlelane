@@ -1,0 +1,135 @@
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  padding: 1rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background: #362e8bdc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.form select,
+.form input {
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0 0.5rem;
+  width: 33%;
+  height: 5.1vh;
+  cursor: pointer;
+  margin: 0.8rem 0;
+  border-radius: 6px;
+  margin-right: 3rem;
+}
+
+.btnGrad {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f09819),
+    color-stop(51%, #edde5d),
+    to(#f09819)
+  );
+  background-image: linear-gradient(
+    to right,
+    #f09819 0%,
+    #edde5d 51%,
+    #f09819 100%
+  );
+}
+
+.btnGrad {
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  padding: 0.8rem 0.5rem;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  display: block;
+  outline: none;
+  border: none;
+  margin: auto;
+  padding: 0.5rem;
+  width: 25%;
+  color: #212121;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btnGrad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #000080;
+  text-decoration: none;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+/*# sourceMappingURL=Carform.module.css.map */
+
+.radios {
+  background: #362e8bdc;
+  border-top-right-radius: 10px;
+}
+
+.radios * {
+  cursor: pointer;
+}
+.new {
+  height: 241px;
+}
+
+@media screen and (max-width: 480px) {
+  .formContainer .heading {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 200;
+  }
+  .formContainer .form > input,
+  .formContainer .form select {
+    padding: 0.5rem 0.7rem;
+    margin: 0.5rem auto;
+    font-size: 0.8rem;
+    width: 75%;
+  }
+  .btnGrad {
+    margin-top: 1rem;
+    width: 60%;
+  }
+  .formContainer .form {
+    height: fit-content;
+    padding-bottom: 1.5rem;
+  }
+  .radios {
+    display: flex;
+    justify-content: center;
+  }
+  .new {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form select,
+  .form input {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 0.3rem;
+  }
+}

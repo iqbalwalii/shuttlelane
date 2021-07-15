@@ -1,0 +1,58 @@
+.formContainer {
+	padding: 1rem 2rem;
+	background-color: #f8f8f8;
+}
+.form {
+	color: darkred;
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+.formContainer .form .inputGroup {
+	margin-bottom: 1rem;
+	color: #292929;
+	width: 55%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.formContainer .form .inputGroup label {
+	margin-right: 10px;
+	color: #464646;
+	font-weight: 500;
+}
+.formContainer .form .inputGroup input,
+.formContainer .form .inputGroup select {
+	width: 70%;
+	padding: 0.3rem;
+	margin-left: 1rem;
+	outline: none;
+	border: 1px solid #d2d6de;
+	color: #999999;
+	font-weight: 100;
+	border-radius: 5px;
+}
+
+.formContainer .form .inputGroup input[type='email'],
+.formContainer .form .inputGroup input[type='tel'],
+.formContainer .form .inputGroup input[type='text'] {
+	width: 67%;
+}
+.formContainer .button {
+	background: #4d96ff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 1rem 1.5rem;
+	min-width: 100px;
+	color: #f2f2f2;
+	border-radius: 5px;
+	margin-right: 10px;
+	transition: all 0.2s linear;
+	margin-top: 1rem;
+}
+.formContainer .button:hover {
+	box-shadow: 0 0 4px 5px #a0e5ff;
+}

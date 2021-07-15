@@ -1,0 +1,28 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 1rem 2rem;
+	border: 1px solid red;
+	border-radius: 10px;
+	background-color: #ffffffd2;
+}
+.form input,
+.form textarea {
+	border: none;
+	border-bottom: 1px solid grey;
+	outline: none;
+	width: 300px;
+	margin-bottom: 1rem;
+	text-transform: capitalize;
+}
+.form button {
+	border: none;
+	outline: none;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	font-size: 1.2rem;
+	cursor: pointer;
+}

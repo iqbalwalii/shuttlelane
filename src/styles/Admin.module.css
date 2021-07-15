@@ -1,0 +1,133 @@
+.admin {
+	/* background: linear-gradient(60deg, #db3e5bda 10%, #ff9f4d); */
+	background-color: #ffffff;
+	min-height: 100vh;
+	padding: 0rem 2rem;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.btn {
+	borderradius: 5px;
+	border: none;
+	outline: none;
+	color: #f3f3f3;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.5rem 1rem;
+}
+
+.admin img {
+	margin-left: -4rem;
+	margin-top: 1rem;
+	width: 20%;
+}
+.admin .formContainer {
+	padding: 2rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 10px 10px #f4f4f4;
+	border-radius: 20px;
+	width: 30%;
+	width: 40%;
+}
+/*{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 10px 10px #f4f4f4;
+	border-radius: 20px;
+	
+	padding: 2rem;
+}*/
+.signUp {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 90%;
+	background-color: #f2f2f2;
+	padding: 1rem;
+	border-radius: 10px;
+}
+.signIn {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 70%;
+	background-color: #ffffff;
+	padding: 1rem 0 2.5rem 0;
+	border-radius: 20px;
+}
+.admin ::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #000000b1;
+}
+
+.admin :-ms-input-placeholder {
+	color: #000000b1;
+}
+
+.admin ::-ms-input-placeholder {
+	color: #000000b1;
+}
+.signUp .heading,
+.signIn .heading {
+	margin-bottom: 2rem;
+	font-size: 2.5rem;
+	opacity: 0.8;
+	margin-top: 0;
+}
+.signUp .heading {
+	font-size: 1rem;
+}
+.signIn > input,
+.signIn > button,
+.signUp > input,
+.signUp > select,
+.signUp > button {
+	margin-bottom: 1rem;
+	border: 1px solid #ebebeb;
+	outline: none;
+	padding: 1rem;
+	background-color: #f8f8f8;
+	border-radius: 10px;
+	width: 80%;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+}
+.signUp > input,
+.signUp > select,
+.signUp > button {
+	width: 30%;
+	padding: 0.9rem 1rem;
+}
+.signUp input:hover,
+.signIn input:hover {
+	box-shadow: 1px 1px 10px 10px #e4e4e4;
+}
+.signUp > button,
+.signIn > button {
+	background-color: #4d96ff;
+	/* background: linear-gradient(to right, #4d96ff 60%, #4d97ff7a); */
+	width: 40%;
+	color: #fff;
+	font-size: 1.1rem;
+	outline: none;
+	border: none;
+}
+.signUp > button {
+	width: 20%;
+	font-size: 1rem;
+}
+.signUp > button:hover,
+.signIn > button:hover {
+	box-shadow: 0 5px 10px 5px #4d97ffa4;
+	/* background: linear-gradient(to left, #4d96ff 60%, #4d97ff7a); */
+}

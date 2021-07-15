@@ -1,0 +1,114 @@
+.modalForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modalForm .inputFields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modalForm .inputFields input {
+  width: 60%;
+}
+
+.modalForm select {
+  width: 98%;
+  height: 5vh;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.modalForm input {
+  margin-bottom: 1rem;
+  border: 1px solid #2121219c;
+  outline: none;
+  padding: .4rem;
+  border-radius: 5px;
+  margin-right: .6rem;
+}
+
+.modalForm .disabled {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modalForm .disabled > label {
+  color: #fff;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: .8rem;
+}
+
+.modalForm .disabled > input {
+  width: 60%;
+  margin: auto;
+  margin-bottom: .5rem;
+  border: 1px solid rgba(255, 255, 255, 0.445);
+}
+
+.modalForm .disabled > input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.modalForm .disabled > input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.modalForm .disabled > input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.modalForm .disabled > input::placeholder {
+  color: #fff;
+}
+
+.btnGrad {
+  background-image: -webkit-gradient(linear, left top, right top, from(#F09819), color-stop(51%, #EDDE5D), to(#F09819));
+  background-image: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%);
+}
+
+.btnGrad {
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  display: block;
+  outline: none;
+  border: none;
+  margin: auto;
+  padding: 1rem .5rem;
+  width: 60%;
+  color: #212121;
+  cursor: pointer;
+}
+
+.btnGrad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #000080;
+  text-decoration: none;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+/*# sourceMappingURL=Modal.module.css.map */
