@@ -18,8 +18,8 @@ const partner = () => {
       className={about.container}
       style={{ width: "80vw", margin: "7rem auto" }}
     >
-      <Grid container justify="center" spacing={3}>
-        <Grid item xs={11} sm={3}>
+      <Grid container justifyContent="center" spacing={3}>
+        <Grid item xs={12} sm={3}>
           <Sidebar heading="Company" routes={routes} />
         </Grid>
         <Grid item xs={11} sm={7} style={{ marginLeft: "1.5rem" }}>

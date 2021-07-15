@@ -15,7 +15,7 @@ const index = () => {
   };
   return (
     <section className={about.container}>
-      <Grid container justify="center" spacing={3}>
+      <Grid container justifyContent="center" spacing={3}>
         <Grid item xs={11} sm={3}>
           <Sidebar heading="Company" routes={routes} />
         </Grid>

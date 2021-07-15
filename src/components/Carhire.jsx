@@ -41,7 +41,7 @@ export default class Carhire extends Component {
             required
             onChange={(e) => this.setState({ vehicle: e.target.value })}
           >
-            <option value="" disabled Selected>
+            <option value="" disabled defaultValue>
               Select Car
             </option>
             <option value="Ford Focus">Ford Focus </option>

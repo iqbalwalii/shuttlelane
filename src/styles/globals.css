@@ -108,10 +108,7 @@ a {
   border-bottom-left-radius: 5px;
   background-color: #e9ecef;
 }
-.checkoutForm {
-  width: "50vw";
-  margin: "2rem auto";
-}
+
 .checkoutForm .inputControl > * {
   border: none;
   outline: none;
@@ -126,8 +123,6 @@ a {
   bottom: 7%;
   right: 3%;
   cursor: pointer;
-}
-.whatsapp:hover {
 }
 .whatsapp > img {
   width: 40px;
@@ -243,7 +238,7 @@ a {
   height: 5vh;
   border-radius: 5%;
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 480px) {
   .btnGrad {
     width: fit-content;
   }
@@ -259,7 +254,9 @@ a {
   }
   .checkoutForm {
     width: 100%;
+    margin: 6rem auto 2rem auto;
   }
+
   .number > select {
     width: 40%;
     height: inherit;

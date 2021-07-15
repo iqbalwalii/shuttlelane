@@ -6,7 +6,7 @@ import BlogCard from "./BlogCard";
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const Singlepost = () => {
   return (
-    <Grid item xs={8} container justify="center">
+    <Grid item xs={8} container justifyContent="center">
       <Grid item xs={10} className={postStyles.postHeader}>
         <Typography variant="h3" align="center" gutterBottom>
           This is the title of this blog post

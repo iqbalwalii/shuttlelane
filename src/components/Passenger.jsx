@@ -100,7 +100,7 @@ const Passenger = ({ values, handler }) => {
                 <option data-countryCode="NG" value="234">
                   Nigeria (+234)
                 </option>
-                <option data-countryCode="GB" value="44" Selected>
+                <option data-countryCode="GB" value="44" defaultValue>
                   UK (+44)
                 </option>
                 <option data-countryCode="US" value="1">

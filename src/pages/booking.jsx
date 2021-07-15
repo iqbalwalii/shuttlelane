@@ -13,8 +13,29 @@ import { Grid } from "@material-ui/core";
 const bookingObj = {};
 
 //   component
+let fields = {
+  dropoffAddress: "",
+  dropoffDate: "",
+  passengers: "",
+  pickupAirport: "",
 
+  flightNumber: "",
+};
 const Booking = ({ userData }) => {
+  console.log("USERDATA:- ", userData);
+  const router = useRouter();
+  try {
+    router.asPath
+      .split("?")[1]
+      .split("&")
+      .forEach((item) => {
+        let entry = item.split("=");
+        fields[entry[0]] = entry[1];
+      });
+  } catch (error) {
+    console.log("split err", error);
+  }
+  console.log("USERDATA FIELDS:- ", fields);
   const carRates = {
     Luxury: "2000",
     Executive: "1500",
@@ -22,15 +43,16 @@ const Booking = ({ userData }) => {
     Shuttle: "1300",
     Business: "1000",
   };
+  const [data, setData] = useState(fields);
   const [selectedCar, setSelectedCar] = useState("");
   const [total, setTotal] = useState("");
   const [passengerDetails, setPassengerDetails] = useState({
-    title: "hell",
-    firstName: "Bound",
-    lastName: "OKAT",
-    email: "tunde@ehgue",
-    countryCode: "91",
-    mobile: "9898",
+    title: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    countryCode: "",
+    mobile: "",
   });
 
   const carHandler = (e) => {
@@ -38,6 +60,7 @@ const Booking = ({ userData }) => {
       return e.target.value;
     });
   };
+
   const passengerHandler = (name, value) => {
     setPassengerDetails((e) => {
       return { ...passengerDetails, [name]: value };
@@ -48,28 +71,12 @@ const Booking = ({ userData }) => {
 
   console.log(bookingObj);
   console.log("passengerDetails", passengerDetails);
-  let data = {};
-
-  const router = useRouter();
-  try {
-    router.asPath
-      .split("?")[1]
-      .split("&")
-      .forEach((item) => {
-        let entry = item.split("=");
-        data[entry[0]] = entry[1];
-        console.log(entry);
-        console.log(data);
-      });
-  } catch (error) {
-    console.log("split err", error);
-  }
 
   return (
     <section style={{ width: "80vw", margin: "auto" }}>
-      <Grid container spacing={2} justify="center">
+      <Grid container spacing={2} justifyContent="center">
         <Grid item sm={8}>
-          <Airport data={data} />
+          <Airport data={data} setData={setData} />
           <PickCar handler={carHandler} car={selectedCar} />
           <Passenger values={passengerDetails} handler={passengerHandler} />
           <Summary
@@ -81,7 +88,7 @@ const Booking = ({ userData }) => {
           <PaymentMethod />
         </Grid>
         <Grid item sm={3} style={{ marginTop: "2rem" }}>
-          <Summary />
+          {/* <Summary /> */}
           <Included />
         </Grid>
         <Grid item={12}>

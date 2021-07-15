@@ -44,7 +44,13 @@ export default class Priority extends Component {
             required
             onChange={(e) => this.setState({ service: e.target.value })}
           >
-            <option value="" selected disabled value="null" id="null"></option>
+            <option
+              value=""
+              defaultValue
+              disabled
+              value="null"
+              id="null"
+            ></option>
             <option value="Pickup" disabled>
               Select Service
             </option>
@@ -58,7 +64,7 @@ export default class Priority extends Component {
             required
             onChange={(e) => this.setState({ airport: e.target.value })}
           >
-            <option selected disabled value="null" id="null">
+            <option defaultValue disabled value="null" id="null">
               Select Airport
             </option>
             <option value="Murtala Muhammed International Airport">
@@ -94,7 +100,7 @@ export default class Priority extends Component {
             onChange={(e) => this.setState({ passengers: e.target.value })}
           />
           <select name="" id="" required>
-            <option value="" selected disabled value="null" id="null">
+            <option value="" defaultValue disabled value="null" id="null">
               Select Cabin Class{" "}
             </option>
 

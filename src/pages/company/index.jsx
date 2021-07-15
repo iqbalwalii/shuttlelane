@@ -16,7 +16,7 @@ const index = () => {
       className={about.container}
       style={{ width: "80vw", margin: "7rem auto" }}
     >
-      <Grid container justify="center" spacing={3}>
+      <Grid container justifyContent="center" spacing={3}>
         <Grid item sm={3}>
           <Sidebar heading="Company" routes={routes} />
         </Grid>

@@ -68,7 +68,7 @@ export default function Form() {
     switch (step) {
       case 0:
         return (
-          <Grid container justify="center" spacing={2}>
+          <Grid container justifyContent="center" spacing={2}>
             <Grid item xs={8}>
               <form className={input.group}>
                 <div className={input.name}>
@@ -113,7 +113,7 @@ export default function Form() {
 
                 <div className={input.agree}>
                   <select name="" id="" className={input.extra}>
-                    <option disabled selected>
+                    <option disabled defaultSelected>
                       Education
                     </option>
                     <option value="primary">Primary</option>
@@ -133,7 +133,7 @@ export default function Form() {
         );
       case 1:
         return (
-          <Grid container justify="center" spacing={2}>
+          <Grid container justifyContent="center" spacing={2}>
             <Grid item xs={8}>
               <form className={input.group}>
                 <div className={input.agree}>
@@ -148,7 +148,7 @@ export default function Form() {
                       e.target.value;
                     }}
                   >
-                    <option disabled selected>
+                    <option disabled defaultValue>
                       {" "}
                       Car Type
                     </option>
@@ -233,7 +233,7 @@ export default function Form() {
         );
       case 2:
         return (
-          <Grid container justify="center" spacing={2}>
+          <Grid container justifyContent="center" spacing={2}>
             <Grid item xs={8}>
               <form className={input.files}>
                 <div>
@@ -384,7 +384,7 @@ export default function Form() {
   };
 
   return (
-    <Grid container justify="center" className={classes.root}>
+    <Grid container justifyContent="center" className={classes.root}>
       <Grid item xs={8}>
         <h2 style={{ textAlign: "center", color: "#000080" }}>
           Drive for Shuttlelane
@@ -407,7 +407,7 @@ export default function Form() {
       </Grid>
       <Grid item xs={8}>
         {activeStep === steps.length ? (
-          <Grid container justify="center" spacing={2}>
+          <Grid container justifyContent="center" spacing={2}>
             <Grid
               item
               style={{

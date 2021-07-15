@@ -19,7 +19,12 @@ export default function MediaCard({ title, description }) {
   const classes = useStyles();
 
   return (
-    <Grid container justify="center" alignItems="center" direction="column">
+    <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+    >
       <Grid item>
         <img
           src={`${prefix}/assets/images/${title}.png`}

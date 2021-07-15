@@ -4,7 +4,7 @@ import form from "../styles/Carform.module.css";
 import Link from "next/link";
 
 let intialPickupValues = {
-  pickup4: "",
+  pickupAirport: "",
   dropoffAddress: "",
   dropoffDate: "",
   passengers: 0,
@@ -41,19 +41,17 @@ const AirportForm = () => {
   }
   function onDropoffSubmitHandler(e) {
     e.preventDefault();
-    console.log(e.target);
-    // formType === "Airport-Pickup"? airportPickupValues={...airportPickupValues, [e.target.id]:  e.target.value}:airportDropoffValues={...airportDropoffValues, [e.target.id]:e.target.value}
-    // console.log("airportPickupValues:", airportPickupValues);
     console.log("airportDropoffValues:", airportDropoffValues);
-    router.push({ pathname: "/booking" });
+    let data = { ...airportDropoffValues, formType: formType };
+    router.push({
+      pathname: "/booking",
+      query: data,
+    });
   }
   function onPickupSubmitHandler(e) {
     e.preventDefault();
-    // console.log(e.target);
-    // formType === "Airport-Pickup"? airportPickupValues={...airportPickupValues, [e.target.id]:  e.target.value}:airportDropoffValues={...airportDropoffValues, [e.target.id]:e.target.value}
     console.log("airportPickupValues:", airportPickupValues);
-    // console.log("airportDropoffValues:", airportDropoffValues);
-    let data = airportPickupValues;
+    let data = { ...airportPickupValues, formType: formType };
     router.push({
       pathname: "/booking",
       query: data,
@@ -85,7 +83,7 @@ const AirportForm = () => {
           name="Pickup"
           id="Airport-Pickup"
           value="Airport-Pickup"
-          checked={formType == "Airport-Pickup" ? true : false}
+          defaultChecked={formType == "Airport-Pickup" ? true : false}
         />
         <label
           htmlFor="Airport-Dropoff"
@@ -108,7 +106,7 @@ const AirportForm = () => {
           name="Pickup"
           id="Airport-Dropoff"
           value="Airport-Dropoff"
-          checked={formType == "Airport-Dropoff" ? true : false}
+          defaultChecked={formType == "Airport-Dropoff" ? true : false}
         />
       </div>
 
@@ -127,7 +125,7 @@ const AirportForm = () => {
               onChange={onChangeHandler}
               id="dropoffAirport"
             >
-              <option selected disabled value="null" id="null">
+              <option defaultValue disabled value="null" id="null">
                 Select Dropoff Airport
               </option>
               <option value="Murtala Muhammed International Airport">
@@ -190,7 +188,7 @@ const AirportForm = () => {
               name="pickupAirport"
               id="pickupAirport"
             >
-              <option selected disabled value="">
+              <option defaultValue disabled value="">
                 Select Pickup Airport
               </option>
               <option value="Murtala Muhammed International Airport">
