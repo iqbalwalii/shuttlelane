@@ -32,7 +32,7 @@ const Booking = () => {
 
   return (
     <section style={{ width: "80vw", margin: "auto" }}>
-      <Grid container spacing={2} justify="center">
+      <Grid container spacing={2} justifyContent="center">
         <Grid item sm={8}>
           <PriorityPassNext />
           <PickCar />

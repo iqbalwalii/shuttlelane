@@ -21,7 +21,7 @@ export default class drive extends Component {
   };
   render() {
     return (
-      <Grid container spacing={2} justify="center">
+      <Grid container spacing={2} justifyContent="center">
         {/* <Grid item xs={10} sm={3}>
                     <Sidebar heading='Partnership' routes={this.routes}/>
                 </Grid> */}

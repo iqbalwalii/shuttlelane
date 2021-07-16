@@ -1,166 +1,167 @@
 .container {
-	background-color: #ecf0f5;
-	min-height: 100vh;
-	overflow-x: hidden;
-	width: 100vw;
-	padding-top: 1rem;
+  background-color: #ecf0f5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+  padding-top: 1rem;
 }
 .container .aside {
-	background-color: #554986;
-	height: 100%;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
-	color: #f0f8ff;
-	margin-right: 20px;
+  background-color: #554986;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #f0f8ff;
+  margin-right: 20px;
 }
 
 .aside .links {
-	display: flex;
-	margin: 0;
-	margin-bottom: 5px;
-	padding: 0.5rem 0 0.5rem 1rem;
-	width: 95%;
-	cursor: pointer;
-	transition: all 0.3s ease-in;
-	backface-visibility: hidden;
+  display: flex;
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0.5rem 0 0.5rem 1rem;
+  width: 95%;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  backface-visibility: hidden;
 }
 .aside .links:hover {
-	transform: translateX(15px);
-	background: #ecf0f5;
-	color: #000;
+  transform: translateX(15px);
+  background: #ecf0f5;
+  color: #000;
 }
 .aside .asideHeading {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	margin-left: 10px;
-	font-weight: 400;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  font-weight: 400;
 }
 
 .container .card {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem;
-	max-width: 150px;
-	max-height: 12vh;
-	color: #f3f3f3;
-	border-radius: 5px;
-	background: #f4f4f4;
-	box-shadow: 0 0 15px 5px #e7e7e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 150px;
+  max-height: 12vh;
+  color: #f3f3f3;
+  border-radius: 5px;
+  background: #f4f4f4;
+  box-shadow: 0 0 15px 5px #e7e7e7;
 }
 .cardStat {
-	border-radius: 5px;
-	background: #f4f4f4;
-	max-width: 550px;
-	box-shadow: 0 0 15px 5px #e7e7e7;
-	padding: 0px;
-	margin: 1.4rem;
-	border: 1px solid #473c3c0e;
+  border-radius: 5px;
+  background: #f4f4f4;
+  max-width: 550px;
+  box-shadow: 0 0 15px 5px #e7e7e7;
+  padding: 0px;
+  margin: 1.4rem;
+  border: 1px solid #473c3c0e;
 }
 .cardStat > div {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0;
-	padding: 5px 5px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5px 5px 0 10px;
 }
 .cardStat h4 {
-	margin: 0;
-	padding: 0;
-	margin-bottom: 1rem;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
 }
 .entry {
-	display: flex;
-	margin: 5px 0;
-	padding: 10px;
-	text-align: start;
+  display: flex;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: start;
 }
 .entry:nth-of-type(odd) {
-	background-color: #e2e2e2;
+  background-color: #e2e2e2;
 }
 
 .entry span:first-child {
-	width: 10%;
+  width: 10%;
 }
 .entry span {
-	width: 22.25%;
+  width: 22.25%;
 }
 .container .greenBackground {
-	background: linear-gradient(120deg, #8bd66d, #b4ec9b);
+  background: linear-gradient(120deg, #8bd66d, #b4ec9b);
 }
 .container .purpleBackground {
-	background: linear-gradient(120deg, #6e7fca, #aabdeb);
+  background: linear-gradient(120deg, #6e7fca, #aabdeb);
 }
 .container .blueBackground {
-	background: linear-gradient(120deg, #73abc9, #b6e9eb);
+  background: linear-gradient(120deg, #73abc9, #b6e9eb);
 }
 .container .pinkBackground {
-	background: linear-gradient(120deg, #ca70b9, #e5a1c4);
+  background: linear-gradient(120deg, #ca70b9, #e5a1c4);
 }
 .container .card h1,
 .container .card p {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*Table styles*/
 .table {
-	background: #fff;
-	color: #000;
-	width: 100%;
-	border-collapse: collapse;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 10px 1rem;
 }
 
 .table tr {
-	margin-bottom: 5rem;
-	padding: 1rem;
-	border-bottom: 1px solid #f7f7f7;
+  margin-bottom: 5rem;
+  padding: 1rem;
+  border-bottom: 1px solid #f7f7f7;
 }
 .table td {
-	padding: 0 5px;
+  padding: 0 5px;
 }
 
 .table tr:nth-of-type(odd) {
-	background: #f5f5f5;
+  background: #f5f5f5;
 }
 .tableContent {
-	padding: 2rem;
+  padding: 2rem;
 }
 
 .tableContent p {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .tableContent td {
-	padding: 1rem 0;
-	vertical-align: sub;
-	color: #232323ee;
-	font-style: italic;
+  padding: 1rem 0;
+  vertical-align: sub;
+  color: #232323ee;
+  font-style: italic;
 }
 .theading > th {
-	color: #000;
-	font-weight: 300;
-	font-size: 1.1rem;
-	background-color: #232323dd;
-	color: #fff;
-	padding: 1rem 0;
+  color: #000;
+  font-weight: 300;
+  font-size: 1.1rem;
+  background-color: #232323dd;
+  color: #fff;
+  padding: 1rem 0;
 }
 .button {
-	background: #4d96ff;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 1rem 1.5rem;
-	min-width: 100px;
-	color: #f2f2f2;
-	border-radius: 10px;
-	margin-right: 10px;
+  background: #4d96ff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  min-width: 100px;
+  color: #f2f2f2;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 .button:hover {
-	box-shadow: 0 0 4px 5px #71a3ea;
+  box-shadow: 0 0 4px 5px #71a3ea;
 }

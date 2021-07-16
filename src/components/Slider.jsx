@@ -78,7 +78,6 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
           <div className="direct" style={{ background: "#fff" }}>
             <img src={`${prefix}/assets/images/luxury.png`} alt="Car" />
             <h4>EXECUTIVE</h4>

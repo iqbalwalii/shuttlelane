@@ -177,10 +177,10 @@
 }
 
 /*# sourceMappingURL=Navbar.module.css.map */
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 480px) {
   .navbar {
     top: 0;
-    height: 11vh;
+    /* height: 11vh; */
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding: 0.6rem;

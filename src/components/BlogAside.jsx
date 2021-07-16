@@ -26,11 +26,22 @@ const BlogAside = () => {
           <Typography gutterBottom variant="h5" color="secondary">
             About Shuttle lane
           </Typography>
+          <Typography
+            variant="body1"
+            color="textSecondary"
+            gutterBottom
+            style={{ marginBottom: "1rem" }}
+          >
+            At Shuttlelane, we give you the best of executive airport services.
+            Because we are committed to enriching your travel experiences, we
+            always make sure that you get unique standard services from us.
+          </Typography>
           <Typography variant="body1" color="textSecondary" gutterBottom>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica Lizards are
-            a widespread group of squamate reptiles, with over 6,000 species,
-            ranging across all continents except Antarctica
+            Registered in England and also under the Corporate Affairs
+            Commission (CAC) laws of Nigeria, Shuttlelane operates from a
+            vantage position of tailoring tastes and desires to suit
+            individual’s demands which are delivered by the best-trained
+            professionals in hospitality and logistics.
           </Typography>
           <ContactForm />
         </CardContent>

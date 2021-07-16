@@ -16,6 +16,7 @@ import styles from "../../styles/Dashboard.module.css";
 const dashboard = () => {
   const [state, setState] = useState("Overview");
   const [pickupBookings, setPickupBookings] = useState([]);
+  // const [dropfBookings, setPickupBookings] = useState([]);
   const onStateChange = (value) => {
     console.log("value", value);
     setState(value);
@@ -24,7 +25,7 @@ const dashboard = () => {
     fetch("http://localhost:3001/api/booking/pickup")
       .then((res) => res.json())
       .then((data) => {
-        setPickupBookings(data);
+        setPickupBookings(data.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -33,15 +34,16 @@ const dashboard = () => {
     <Grid
       container
       justifyContent="center"
-      alighItems="flex-start"
+      alignItems="flex-start"
       className={styles.container}
+      style={{ marginTop: "6rem" }}
     >
       <Grid item sm={2}>
         <AdminAside onStateChange={onStateChange} />
       </Grid>
       <Grid item container justifyContent="space-evenly" sm={10}>
         {state == "Overview" ? (
-          <Overview pickupCount={pickupBookings.length} />
+          <Overview pickupBookings={pickupBookings} />
         ) : state.includes("Car") ? (
           <CarBooking />
         ) : state.includes("Airport") ? (

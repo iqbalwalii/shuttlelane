@@ -16,12 +16,12 @@ const corporate_travel = () => {
   return (
     <section className={about.container}>
       <Grid container justifyContent="center" spacing={3}>
-        <Grid xs={11} sm={3}>
+        <Grid item xs={11} sm={3} style={{ padding: "0px" }}>
           <Sidebar heading="Services" routes={routes} />
         </Grid>
 
         <Grid item xs={11} sm={7}>
-          <Typography variant="h5" gutterBottom color="textPrimary" paragraph>
+          <Typography variant="h5" gutterBottom color="textPrimary">
             Corporate Travel
           </Typography>
           <Typography variant="body1" paragraph color="textSecondary">

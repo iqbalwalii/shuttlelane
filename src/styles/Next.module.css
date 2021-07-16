@@ -12,9 +12,7 @@
   width: 300px;
   margin-bottom: 2rem;
 }
-.mainForm {
-  border: none;
-}
+
 .checkoutForm .inputControl select,
 .checkoutForm .inputControl input {
   width: 100%;
@@ -27,11 +25,11 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid rgba(204, 204, 204, 0.726);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -48,25 +46,6 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
-}
-.checkoutForm {
-  padding: 1.4rem;
+      justify-content: space-around;
 }
 /*# sourceMappingURL=Next.module.css.map */
-@media screen and (max-width: 480px) {
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-  }
-  .mainForm {
-    margin-top: 3rem;
-    padding: 1rem;
-    /* border: 1px solid #ccc; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
-}

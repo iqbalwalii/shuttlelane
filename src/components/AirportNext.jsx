@@ -91,7 +91,7 @@ const AirportNext = ({ data, setData }) => {
                 type="date"
                 name="arrivalDate"
                 id="dropoffDate"
-                value={data?.arriv}
+                value={data?.arrivalDate}
                 onChange={onChangeHandler}
               />
             </div>

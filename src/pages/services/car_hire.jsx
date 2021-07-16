@@ -16,7 +16,7 @@ const car_hire = () => {
   return (
     <section className={about.container}>
       <Grid container justifyContent="center" spacing={3}>
-        <Grid item xs={11} sm={3}>
+        <Grid item xs={11} sm={3} style={{ padding: "0px" }}>
           <Sidebar heading="Services" routes={routes} />
         </Grid>
 

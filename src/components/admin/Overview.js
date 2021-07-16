@@ -22,14 +22,15 @@ const card = {
   boxShadow: "0 0 15px 5px #e7e7e7",
 };
 
-const Overview = ({ pickupCount }) => {
+const Overview = ({ pickupBookings }) => {
+  console.log("pickupBookings", pickupBookings);
   return (
     <>
       <Grid item sm={3}>
         <div className={styles.purpleBackground} style={card}>
           <div>
-            <h1>{pickupCount}</h1>
-            <p>Airport Bookings</p>
+            <h1>{pickupBookings?.length}</h1>
+            <p>Airport Pickup Bookings</p>
           </div>
           <Flight fontSize="large" />
         </div>
@@ -62,37 +63,24 @@ const Overview = ({ pickupCount }) => {
         </div>
       </Grid>
       <Grid item sm={6} className={styles.cardStat}>
-        <h4>Last 5 Airport Transfer Bookings</h4>
+        <h4>Last 5 Airport Pickup Bookings</h4>
         <p className={styles.entry}>
           <span>No</span> <span>Booking Ref</span>
           <span>Date & Time</span> <span>Transfer Type</span>
-          <span>Payment Status</span>
+          <span>Payment </span>
         </p>
-        <p className={styles.entry}>
-          <span>No</span> <span>Booking Ref</span>
-          <span>Date & Time</span> <span>Transfer Type</span>
-          <span>Payment Status</span>
-        </p>
-        <p className={styles.entry}>
-          <span>No</span> <span>Booking Ref</span>
-          <span>Date & Time</span> <span>Transfer Type</span>
-          <span>Payment Status</span>
-        </p>
-        <p className={styles.entry}>
-          <span>No</span> <span>Booking Ref</span>
-          <span>Date & Time</span> <span>Transfer Type</span>
-          <span>Payment Status</span>
-        </p>
-        <p className={styles.entry}>
-          <span>No</span> <span>Booking Ref</span>
-          <span>Date & Time</span> <span>Transfer Type</span>
-          <span>Payment Status</span>
-        </p>
-        <p className={styles.entry}>
-          <span>No</span> <span>Booking Ref</span>
-          <span>Date & Time</span> <span>Transfer Type</span>
-          <span>Payment Status</span>
-        </p>
+        {pickupBookings?.slice(0, 5).map((item, idx) => {
+          return (
+            <p className={styles.entry}>
+              <span>{++idx}</span> <span>{item.bookingReference}</span>
+              <span>
+                {item.arrivalDate.slice(0, 10)} <br />& {item.time}
+              </span>
+              <span>{item.formType.split("-").join(" ")}</span>
+              <span>{item.paymentStatus}</span>
+            </p>
+          );
+        })}
       </Grid>
       <Grid item sm={6} className={styles.cardStat}>
         <h4>Last 5 Car Transfer Bookings</h4>

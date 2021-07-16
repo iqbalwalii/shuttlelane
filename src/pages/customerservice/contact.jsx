@@ -23,12 +23,7 @@ const contact = () => {
           </Typography>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0972831293307!2d3.3670999!3d6.5093691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c448e2f97c3%3A0xc95f24c00955aecc!2sShuttlelane!5e0!3m2!1sen!2sin!4v1625484619532!5m2!1sen!2sin"
-            style={{
-              width: "800px",
-              height: "250px",
-              border: "none",
-              marginBottom: "2rem",
-            }}
+            class="map"
             allowfullscreen=""
             loading="lazy"
           ></iframe>

@@ -37,7 +37,7 @@ const passengerFields = {
 };
 // COMPONENT
 
-const Booking = ({ userData }) => {
+const Booking = () => {
   const router = useRouter();
   try {
     router.asPath
@@ -45,7 +45,7 @@ const Booking = ({ userData }) => {
       .split("&")
       .forEach((item) => {
         let entry = item.split("=");
-        fields[entry[0]] = entry[1];
+        fields[entry[0]] = entry[1].split("+").join(" ");
       });
   } catch (error) {
     console.log("split err", error);

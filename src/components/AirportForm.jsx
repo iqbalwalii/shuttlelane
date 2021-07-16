@@ -119,11 +119,12 @@ const AirportForm = () => {
               name="pickupAddress"
               id="pickupAddress"
               placeholder="Pick-up Address"
+              value={airportDropoffValues.pickupAddress}
             />
             <select
-              name="airport"
+              name="dropoffAirport"
               onChange={onChangeHandler}
-              id="dropoffAirport"
+              id="dropoffAirpSelect Dropoff Airportort"
             >
               <option defaultValue disabled value="null" id="null">
                 Select Dropoff Airport
@@ -168,6 +169,7 @@ const AirportForm = () => {
               placeholder="Number of Passengers"
               min="1"
               max="10"
+              value={airportDropoffValues.passengers}
             />
 
             <button className="btnGrad" type="submit">
