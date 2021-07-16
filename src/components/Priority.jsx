@@ -44,14 +44,7 @@ export default class Priority extends Component {
             required
             onChange={(e) => this.setState({ service: e.target.value })}
           >
-            <option
-              value=""
-              defaultValue
-              disabled
-              value="null"
-              id="null"
-            ></option>
-            <option value="Pickup" disabled>
+            <option defaultValue disabled>
               Select Service
             </option>
             <option value="Pickup">Arrival Protocol Service </option>
@@ -64,7 +57,7 @@ export default class Priority extends Component {
             required
             onChange={(e) => this.setState({ airport: e.target.value })}
           >
-            <option defaultValue disabled value="null" id="null">
+            <option value="" defaultValue disabled>
               Select Airport
             </option>
             <option value="Murtala Muhammed International Airport">
@@ -73,7 +66,7 @@ export default class Priority extends Component {
             <option value="Murtala Muhammed Domestic Airport">
               Murtala Muhammed Domestic Airport
             </option>
-            <option value="Port Harcourt International Airport">
+            {/* <option value="Port Harcourt International Airport">
               Port Harcourt International Airport
             </option>
             <option value="Nnamdi Azikwe International Airport">
@@ -87,7 +80,7 @@ export default class Priority extends Component {
               London Heathrow Airport
             </option>
             <option value="Gatwick Airport">Gatwick Airport</option>
-            <option value="London City Airport">London City Airport</option>
+            <option value="London City Airport">London City Airport</option> */}
           </select>
 
           <input
@@ -96,12 +89,13 @@ export default class Priority extends Component {
             type="number"
             name=""
             id=""
+            required
             value={this.state.passengers}
             onChange={(e) => this.setState({ passengers: e.target.value })}
           />
           <select name="" id="" required>
-            <option value="" defaultValue disabled value="null" id="null">
-              Select Cabin Class{" "}
+            <option value="" defaultValue disabled>
+              Select Cabin Class
             </option>
 
             <option value="Pickup">First Class</option>

@@ -39,14 +39,15 @@ const Passenger = ({ values, handler }) => {
               <span>
                 <Person fontSize="small" />
               </span>
-              <input
-                type="text"
-                name="title"
-                placeholder="Title"
-                id="title"
-                onChange={onChangeHandler}
-                value={values.title}
-              />
+              <select onChange={onChangeHandler} name="title" id="title">
+                <option value=" " selected>
+                  Select title
+                </option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="ms">ms</option>
+              </select>
             </div>
             <div className={next.inputControl}>
               <span>

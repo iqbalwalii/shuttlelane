@@ -22,14 +22,14 @@ const card = {
   boxShadow: "0 0 15px 5px #e7e7e7",
 };
 
-const Overview = ({ pickupBookings }) => {
-  console.log("pickupBookings", pickupBookings);
+const Overview = ({ bookings }) => {
+  console.log("bookings", bookings);
   return (
     <>
       <Grid item sm={3}>
         <div className={styles.purpleBackground} style={card}>
           <div>
-            <h1>{pickupBookings?.length}</h1>
+            <h1>{bookings?.length}</h1>
             <p>Airport Pickup Bookings</p>
           </div>
           <Flight fontSize="large" />
@@ -69,12 +69,14 @@ const Overview = ({ pickupBookings }) => {
           <span>Date & Time</span> <span>Transfer Type</span>
           <span>Payment </span>
         </p>
-        {pickupBookings?.slice(0, 5).map((item, idx) => {
+        {bookings?.slice(0, 5).map((item, idx) => {
           return (
             <p className={styles.entry}>
               <span>{++idx}</span> <span>{item.bookingReference}</span>
               <span>
-                {item.arrivalDate.slice(0, 10)} <br />& {item.time}
+                {item.arrivalDate?.slice(0, 10) ||
+                  item.pickupDate?.slice(0, 10)}{" "}
+                <br />& {item.time}
               </span>
               <span>{item.formType.split("-").join(" ")}</span>
               <span>{item.paymentStatus}</span>

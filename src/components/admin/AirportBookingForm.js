@@ -3,9 +3,38 @@ import { Grid } from "@material-ui/core";
 
 import styles from "../../styles/BookingForm.module.css";
 
+// HELPER FUNCTIONS
+function createBooking(data) {
+  console.log("SUBMOISSSSSSs", data);
+
+  fetch("http://localhost:3001/api/booking/pickup", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...data,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("result fro server", data);
+      return data;
+    })
+    .catch((err) => {
+      console.log("err in catch", err);
+    });
+  return "created";
+}
+function validataDate(data) {
+  console.log("validate data", data);
+  return Object.values(data).includes("") || Object.values(data).includes(" ");
+}
+
 const AirportBookingForm = (props) => {
   const [inputValues, setInputValues] = useState({
-    transferType: "",
+    formType: "",
     carType: "",
     title: "",
     firstName: "",
@@ -20,6 +49,13 @@ const AirportBookingForm = (props) => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log("values are: ", inputValues);
+    const verified = validataDate(inputValues);
+    if (!verified) {
+      const response = createBooking(inputValues);
+      console.log("VACK", response);
+    } else {
+      console.log("validation Error");
+    }
   };
   const onChangeHandler = (e) => {
     console.log(e.target);
@@ -41,39 +77,162 @@ const AirportBookingForm = (props) => {
       </Grid>
 
       <Grid item xs={12}>
-        <main className={styles.formContainer}>
+        <main
+          className={styles.formContainer}
+          style={{ height: "70vh", overflow: "scroll" }}
+        >
           <form onSubmit={onSubmitHandler} className={styles.form}>
             <div className={styles.inputGroup}>
-              <label htmlFor="transferType">Transfer Type</label>
-              <select
-                onChange={onChangeHandler}
-                name="transferType"
-                id="transferType"
-              >
-                <option value=" " disabled defaultValue>
+              <label htmlFor="formType">Transfer Type</label>
+              <select onChange={onChangeHandler} name="formType" id="formType">
+                <option value=" " disabled selected>
                   Select Transfer Type
                 </option>
-                <option value="Airport Pickup">Airport Pick-up</option>
-                <option value="Airport Dropoff">Airport Drop-off</option>
+                <option value="Airport-Pickup">Airport Pick-up</option>
+                <option value="Airport-Dropoff">Airport Drop-off</option>
               </select>
             </div>
+            {inputValues.formType === "Airport-Pickup" ? (
+              <>
+                <div className={styles.inputGroup}>
+                  <label htmlFor="pickupAirport">Select Pickup Airport</label>
+                  <select
+                    onChange={onChangeHandler}
+                    name="pickupAirport"
+                    id="pickupAirport"
+                  >
+                    <option selected disabled value="null" id="null">
+                      Select Pickup Airport
+                    </option>
+                    <option value="Murtala Muhammed International Airport">
+                      Murtala Muhammed International Airport
+                    </option>
+                    <option value="Murtala Muhammed Domestic Airport">
+                      Murtala Muhammed Domestic Airport
+                    </option>
+                  </select>
+                </div>
+                <div className={styles.inputGroup}>
+                  <label htmlFor="flightNumber">Arrival Date</label>
+                  <input
+                    type="text"
+                    placeholder="Flight number"
+                    id="flightNumber"
+                    name="flightNumber"
+                    onChange={onChangeHandler}
+                    value={inputValues.flightNumber}
+                  />
+                </div>
+                <div className={styles.inputGroup}>
+                  <label htmlFor="arrivalDate">Arrival Date</label>
+                  <input
+                    type="date"
+                    placeholder="Arrival Date"
+                    id="arrivalDate"
+                    name="arrivalDate"
+                    onChange={onChangeHandler}
+                    value={inputValues.arrivalDate}
+                  />
+                </div>
+                <div className={styles.inputGroup}>
+                  <label htmlFor="dropoffAddress">Dropoff Address</label>
+                  <input
+                    type="text"
+                    placeholder="Dropoff Address"
+                    id="dropoffAddress"
+                    name="dropoffAddress"
+                    onChange={onChangeHandler}
+                    value={inputValues.dropoffAddress}
+                  />
+                </div>
+              </>
+            ) : inputValues.formType === "Airport-Dropoff" ? (
+              <>
+                <div className={styles.inputGroup}>
+                  <label htmlFor="dropoffAirport">Select Airport</label>
+                  <select
+                    onChange={onChangeHandler}
+                    name="dropoffAirport"
+                    id="dropoffAirport"
+                  >
+                    <option selected disabled value="null" id="null">
+                      Select Dropoff Airport
+                    </option>
+                    <option value="Murtala Muhammed International Airport">
+                      Murtala Muhammed International Airport
+                    </option>
+                    <option value="Murtala Muhammed Domestic Airport">
+                      Murtala Muhammed Domestic Airport
+                    </option>
+                  </select>
+                </div>
+                <div className={styles.inputGroup}>
+                  <label htmlFor="pickupAddress">Pickup Address</label>
+                  <input
+                    type="text"
+                    placeholder="Pickup Address"
+                    id="pickupAddress"
+                    name="pickupAddress"
+                    onChange={onChangeHandler}
+                    value={inputValues.pickupAddress}
+                  />
+                </div>
+                <div className={styles.inputGroup}>
+                  <label htmlFor="pickupDate">Pickup Date</label>
+                  <input
+                    type="date"
+                    placeholder="Pickup Date"
+                    id="pickupDate"
+                    name="pickupDate"
+                    onChange={onChangeHandler}
+                    value={inputValues.pickupDate}
+                  />
+                </div>
+              </>
+            ) : (
+              ""
+            )}
             <div className={styles.inputGroup}>
               <label htmlFor="carType">Car Type</label>
               <select onChange={onChangeHandler} name="carType" id="carType">
-                <option value=" " disabled defaultValue>
+                <option value=" " selected>
                   Select Car Type
                 </option>
-                <option value="economy">Economy</option>
-                <option value="bussiness">Bussiness</option>
-                <option value="executive">Executive</option>
-                <option value="luxury">Luxury</option>
-                <option value="shuttle">Shuttle</option>
+                <option value="Economy">Economy</option>
+                <option value="Bussiness">Bussiness</option>
+                <option value="Executive">Executive</option>
+                <option value="Luxury">Luxury</option>
+                <option value="Shuttle">Shuttle</option>
               </select>
+            </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="passengers">Passengers</label>
+              <input
+                type="number"
+                placeholder="Number of Passengers"
+                id="passengers"
+                name="passengers"
+                min="1"
+                max="10"
+                onChange={onChangeHandler}
+                value={inputValues.passengers}
+              />
+            </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="firstName">Select Time</label>
+              <input
+                type="time"
+                placeholder="Select Time"
+                id="time"
+                name="time"
+                onChange={onChangeHandler}
+                value={inputValues.time}
+              />
             </div>
             <div className={styles.inputGroup}>
               <label htmlFor="title">Title</label>
               <select onChange={onChangeHandler} name="title" id="title">
-                <option value=" " disabled defaultValue>
+                <option value=" " selected>
                   Select title
                 </option>
                 <option value="Mr">Mr</option>
@@ -104,6 +263,7 @@ const AirportBookingForm = (props) => {
                 value={inputValues.lastName}
               />
             </div>
+
             <div className={styles.inputGroup}>
               <label htmlFor="email">Email</label>
               <input

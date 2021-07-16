@@ -32,6 +32,7 @@
 		"react-toastify": "^7.0.4",
 		"shortid": "^2.2.16",
 		"swiper": "^6.7.5",
+		"twilio": "^3.66.0",
 		"yup": "^0.32.9"
 	},
 	"devDependencies": {

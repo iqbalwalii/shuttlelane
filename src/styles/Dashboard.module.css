@@ -123,6 +123,7 @@
 }
 .table td {
   padding: 0 5px;
+  margin-left: 1rem;
 }
 
 .table tr:nth-of-type(odd) {

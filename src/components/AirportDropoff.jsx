@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card } from "@material-ui/core";
 import {
-  FlightLand,
+  FlightTakeoff,
   Today,
   AccessTime,
   LocalAirport,
@@ -11,7 +11,8 @@ import {
 } from "@material-ui/icons";
 import next from "../styles/Next.module.css";
 
-const AirportNext = ({ data, setData }) => {
+const AirportDropoff = ({ data, setData }) => {
+  console.log('DROPOFFFFFFFFFFFF..', data)
   const onChangeHandler = (e) => {
     console.log("Nameeeee", e.target.name, e.target.value);
     setData({ ...data, [e.target.name]: e.target.value });
@@ -34,16 +35,16 @@ const AirportNext = ({ data, setData }) => {
           <div className={next.formGroup}>
             <div className={next.inputControl}>
               <span>
-                <FlightLand fontSize="small" />
+                <FlightTakeoff fontSize="small" />
               </span>
               <select
-                name="pickupAirport"
-                id="pickupAirport"
-                value={data?.pickupAirport?.split("+").join(" ")}
+                name="dropoffAirport"
+                id="dropoffAirport"
+                value={data?.dropoffAirport?.split("+").join(" ")}
                 onChange={onChangeHandler}
               >
                 <option defaultValue disabled value="null" id="null">
-                  Select pickup Airport
+                  Select Dropoff Airport
                 </option>
                 <option value="Murtala Muhammed International Airport">
                   Murtala Muhammed International Airport
@@ -75,9 +76,9 @@ const AirportNext = ({ data, setData }) => {
               </span>
               <input
                 type="text"
-                name="dropoffAddress"
-                placeholder="Drop-off Address"
-                value={data?.dropoffAddress?.split("+").join(" ")}
+                name="pickupAddress"
+                placeholder="Pickup Address"
+                value={data?.pickupAddress?.split("+").join(" ")}
                 onChange={onChangeHandler}
               />
             </div>
@@ -89,9 +90,9 @@ const AirportNext = ({ data, setData }) => {
               </span>
               <input
                 type="date"
-                name="arrivalDate"
-                id="dropoffDate"
-                value={data?.arrivalDate}
+                name="pickupDate"
+                id="pickupDate"
+                value={data?.pickupDate}
                 onChange={onChangeHandler}
               />
             </div>
@@ -151,21 +152,10 @@ const AirportNext = ({ data, setData }) => {
                 onChange={onChangeHandler}
               />
             </div>
-            <div className={next.inputControl}>
-              <span>
-                <LocalAirport fontSize="small" />
-              </span>
-              <input
-                type="text"
-                name="flightNumber"
-                onChange={onChangeHandler}
-                value={data?.flightNumber}
-              />
-            </div>
           </div>
         </form>
       </Card>
     </div>
   );
 };
-export default AirportNext;
+export default AirportDropoff;

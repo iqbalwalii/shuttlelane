@@ -248,6 +248,7 @@ a {
 @media screen and (max-width: 480px) {
   .btnGrad {
     width: fit-content;
+    height: fit-content;
   }
   .homePay > img {
     margin: 2rem 0;

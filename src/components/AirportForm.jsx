@@ -10,7 +10,7 @@ let intialPickupValues = {
   passengers: 0,
 };
 let intialDropoffValues = {
-  DropoffAirport: "",
+  dropoffAirport: "",
   pickupAddress: "",
   pickupDate: "",
   passengers: 0,
@@ -43,6 +43,8 @@ const AirportForm = () => {
     e.preventDefault();
     console.log("airportDropoffValues:", airportDropoffValues);
     let data = { ...airportDropoffValues, formType: formType };
+
+    console.log("data in Dropoff", data);
     router.push({
       pathname: "/booking",
       query: data,
@@ -124,9 +126,9 @@ const AirportForm = () => {
             <select
               name="dropoffAirport"
               onChange={onChangeHandler}
-              id="dropoffAirpSelect Dropoff Airportort"
+              id="dropoffAirport"
             >
-              <option defaultValue disabled value="null" id="null">
+              <option selected disabled value="null" id="null">
                 Select Dropoff Airport
               </option>
               <option value="Murtala Muhammed International Airport">
@@ -135,7 +137,7 @@ const AirportForm = () => {
               <option value="Murtala Muhammed Domestic Airport">
                 Murtala Muhammed Domestic Airport
               </option>
-              <option value="Port Harcourt International Airport">
+              {/* <option value="Port Harcourt International Airport">
                 Port Harcourt International Airport
               </option>
               <option value="Nnamdi Azikwe International Airport">
@@ -149,7 +151,7 @@ const AirportForm = () => {
                 London Heathrow Airport
               </option>
               <option value="Gatwick Airport">Gatwick Airport</option>
-              <option value="London City Airport">London City Airport</option>
+              <option value="London City Airport">London City Airport</option> */}
             </select>
             <input
               required
@@ -190,7 +192,7 @@ const AirportForm = () => {
               name="pickupAirport"
               id="pickupAirport"
             >
-              <option defaultValue disabled value="">
+              <option selected disabled value="">
                 Select Pickup Airport
               </option>
               <option value="Murtala Muhammed International Airport">
@@ -199,7 +201,7 @@ const AirportForm = () => {
               <option value="Murtala Muhammed Domestic Airport">
                 Murtala Muhammed Domestic Airport
               </option>
-              <option value="Port Harcourt International Airport">
+              {/* <option value="Port Harcourt International Airport">
                 Port Harcourt International Airport
               </option>
               <option value="Nnamdi Azikwe International Airport">
@@ -213,7 +215,7 @@ const AirportForm = () => {
                 London Heathrow Airport
               </option>
               <option value="Gatwick Airport">Gatwick Airport</option>
-              <option value="London City Airport">London City Airport</option>
+              <option value="London City Airport">London City Airport</option> */}
             </select>
             <input
               required

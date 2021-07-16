@@ -19,8 +19,18 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    pickupAddress: {
+      type: String,
+    },
+    dropoffAirport: {
+      type: String,
+      trim: true,
+    },
     time: {
       type: String,
+    },
+    pickupDate: {
+      type: Date,
     },
     arrivalDate: {
       type: Date,

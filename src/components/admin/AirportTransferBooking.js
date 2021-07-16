@@ -6,16 +6,16 @@ import AirportBookingForm from "./AirportBookingForm";
 import Modal from "./Modal";
 
 const AirportTransferBooking = () => {
-  const [pickupBookings, setPickupBookings] = useState([]);
+  const [bookings, setBookings] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3001/api/booking/pickup")
       .then((res) => res.json())
       .then((data) => {
-        setPickupBookings(data.data);
+        setBookings(data.data);
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(pickupBookings);
+  console.log(bookings);
   const [editMode, setEditMode] = useState(false);
   const onClickHandler = () => {
     setEditMode(true);
@@ -60,7 +60,7 @@ const AirportTransferBooking = () => {
                 <th>Details</th>
 
                 <th>Date & Time</th>
-                <th>Passenger</th>
+                <th>Contact</th>
                 <th>Amount</th>
                 <th>Payment </th>
                 <th>Booking Date</th>
@@ -68,7 +68,7 @@ const AirportTransferBooking = () => {
               </tr>
             </thead>
             <tbody className={styles.tableContent}>
-              {pickupBookings?.map((item, idx) => {
+              {bookings?.map((item, idx) => {
                 return (
                   <tr>
                     <td
@@ -82,27 +82,39 @@ const AirportTransferBooking = () => {
                     </td>
                     <td>{item.bookingReference}</td>
                     <td>
-                      <p>{item.pickupAirport}</p>
+                      <p>
+                        Transfer Type:{" "}
+                        <u style={{ fontStyle: "italic", color: "#4D96FF" }}>
+                          {" "}
+                          {item.formType}
+                        </u>
+                      </p>
+                      <p>{item?.pickupAirport || item?.dropoffAirport}</p>
                       <p>Vehicle Class: {item.carType}</p>
-                      <p>Flight Number: {item.flightNumber}</p>
-                      <p>Transfer Type: {item.formType}</p>
-                      <p>Dropoff Address: {item.dropoffAddress}</p>
+
+                      <p>Passengers: {item.passengers}</p>
+                      <p>Flight Number: {item.flightNumber || " "}</p>
+
+                      <p>
+                        Address: {item.dropoffAddress || item.pickupAddress}
+                      </p>
                     </td>
 
                     <td>
-                      {item.arrivalDate.slice(0, 10)} <br /> & {item.time}
+                      {item.arrivalDate?.slice(0, 10) ||
+                        item.pickupDate?.slice(0, 10)}{" "}
+                      <br /> & {item.time}
                     </td>
                     <td>
                       <p>
                         <span>{item.title}</span> <span>{item.firstName}</span>
                         <span>{item.lastname}</span>
                       </p>
-                      <p>{item.emial}</p>
+                      <p>{item.email}</p>
                       <p>
                         <span>+{item.countryCode}</span>{" "}
                         <span>{item.mobile}</span>{" "}
                       </p>
-                      <p>Passengers: {item.passengers}</p>
                     </td>
                     <td>
                       NGN <br />
@@ -110,7 +122,7 @@ const AirportTransferBooking = () => {
                     </td>
                     <td>{item.paymentStatus}</td>
                     <td>
-                      {item.createdAt.slice(0, 10)} <br /> & {item.time}
+                      {item.createdAt.slice(0, 10)} <br />
                     </td>
                     <td>Pending</td>
                   </tr>

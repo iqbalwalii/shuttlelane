@@ -137,6 +137,8 @@ function MyApp({ Component, pageProps }) {
             }}
           />
         </nav>
+      ) : router.route.includes("admin") ? (
+        " "
       ) : (
         <>
           <div data-aos="fade-down" className={topbar.topbar}>
@@ -203,7 +205,7 @@ function MyApp({ Component, pageProps }) {
               <Grid
                 item
                 container
-                justifyContent="flex-end"
+                justify="flex-end"
                 alignItems="center"
                 sm={9}
                 spacing={3}
@@ -242,9 +244,9 @@ function MyApp({ Component, pageProps }) {
       <main className={styles.main}>
         <Component {...pageProps} />
       </main>
-      <Whatsapp />
+      {router.route.includes("admin") ? "" : <Whatsapp />}
       <footer className={footer.footer}>
-        <Grid container justifyContent="space-evenly" spacing={3}>
+        <Grid container justify="space-evenly" spacing={3}>
           <Grid item xs={12} sm={3} className={footer.sections}>
             <Typography variant="h6" gutterBottom style={{ color: "#fff" }}>
               COMPANY

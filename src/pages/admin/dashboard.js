@@ -15,8 +15,8 @@ import styles from "../../styles/Dashboard.module.css";
 
 const dashboard = () => {
   const [state, setState] = useState("Overview");
-  const [pickupBookings, setPickupBookings] = useState([]);
-  // const [dropfBookings, setPickupBookings] = useState([]);
+  const [bookings, setBookings] = useState([]);
+  // const [dropfBookings, setbookings] = useState([]);
   const onStateChange = (value) => {
     console.log("value", value);
     setState(value);
@@ -25,7 +25,9 @@ const dashboard = () => {
     fetch("http://localhost:3001/api/booking/pickup")
       .then((res) => res.json())
       .then((data) => {
-        setPickupBookings(data.data);
+        {
+          console.log('IN DASH', data)
+          setBookings(data.data);}
       })
       .catch((err) => console.log(err));
   }, []);
@@ -43,7 +45,7 @@ const dashboard = () => {
       </Grid>
       <Grid item container justifyContent="space-evenly" sm={10}>
         {state == "Overview" ? (
-          <Overview pickupBookings={pickupBookings} />
+          <Overview bookings={bookings} />
         ) : state.includes("Car") ? (
           <CarBooking />
         ) : state.includes("Airport") ? (

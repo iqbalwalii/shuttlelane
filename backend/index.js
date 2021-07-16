@@ -1,6 +1,7 @@
 var express = require("express");
 var next = require("next");
 var { json, urlencoded } = require("body-parser");
+
 var cors = require("cors");
 const dbConnect = require("./utils/db");
 const postRouter = require("./resources/post/post.router");
@@ -37,7 +38,6 @@ app.prepare().then(() => {
 
   server.post("/api/signin", auth.signIn);
   server.post("/api/signup", auth.signUp);
-
   // next handler
   server.get("*", (req, res) => {
     return handle(req, res);
