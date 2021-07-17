@@ -20,11 +20,6 @@ const CarBooking = () => {
   };
   return (
     <>
-      <Grid item sm={12}>
-        <h2 style={{ textAlign: "center", color: "#554986" }}>
-          Car Transfer Overview
-        </h2>
-      </Grid>
       {editMode && (
         <Modal
           isOpen={editMode}
@@ -36,7 +31,7 @@ const CarBooking = () => {
         </Modal>
       )}
       <Grid item xs={12}>
-        <main>
+        <main style={{ width: "98%" }}>
           <div
             style={{
               display: "flex",

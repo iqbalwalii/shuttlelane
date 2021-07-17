@@ -9,6 +9,7 @@ import CarBooking from "../../components/admin/CarBooking";
 import Overview from "../../components/admin/Overview";
 import AdminAside from "../../components/admin/AdminAside";
 import User from "../../components/admin/User";
+import ExchangeRates from "../../components/admin/ExchangeRates";
 import FleetManagementBooking from "../../components/admin/FleetManagementBooking";
 
 import styles from "../../styles/Dashboard.module.css";
@@ -69,6 +70,8 @@ const dashboard = () => {
           <User />
         ) : state.includes("Fleet") ? (
           <FleetManagementBooking />
+        ) : state.includes("Rates") ? (
+          <ExchangeRates />
         ) : (
           <div>Loading..!</div>
         )}

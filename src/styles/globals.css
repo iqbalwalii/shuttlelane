@@ -278,4 +278,9 @@ a {
     height: 5vh;
     border-radius: 5%;
   }
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-next {
+    display: none !important;
+  }
 }

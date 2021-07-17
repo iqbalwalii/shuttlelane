@@ -15,8 +15,8 @@ const Summary = ({ total, handler, title, subTotal, country }) => {
     "Saint Pierre and Miquelon",
   ];
   const GBP = ["United Kingdom"];
-  const USD = [""];
-
+  const USD = ["United States"];
+  console.log("COUNTRYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY", country);
   return (
     <div className={styles.card}>
       <h4>Booking Summary</h4>
@@ -28,13 +28,19 @@ const Summary = ({ total, handler, title, subTotal, country }) => {
           <span>Sub Total</span> <span>${subTotal} </span>
         </p>
         <select name="currency" id="currency">
-          
-          {country == "Nigeria" ? (
+          {country === "Nigeria" ? (
             <option value="NGN" selected>
-              NGN &#8358;{" "}
+              NGN &#8358;
             </option>
           ) : (
             <option value="NGN">NGN &#8358; </option>
+          )}
+          {country === "United States" ? (
+            <option value="USD" selected>
+              USD $
+            </option>
+          ) : (
+            <option value="USD">USD $</option>
           )}
           {Euro.includes(country) ? (
             <option value="EUR" selected>
@@ -49,13 +55,6 @@ const Summary = ({ total, handler, title, subTotal, country }) => {
             </option>
           ) : (
             <option value="GBP">GBP &#163;</option>
-          )}
-          {country == "United States" ? (
-            <option value="USD" selected>
-              USD $
-            </option>
-          ) : (
-            <option value="USD">USD $</option>
           )}
         </select>
       </div>

@@ -54,7 +54,11 @@ const Reviews = () => {
                 position: "relative",
               }}
             >
-              <Typography variant="body2" paragraph style={{ color: "#fff" }}>
+              <Typography
+                variant="body2"
+                paragraph
+                style={{ color: "#fff", lineHeight: "23px" }}
+              >
                 <FormatQuoteIcon
                   style={{
                     transform: "rotate(180deg)",
@@ -91,7 +95,11 @@ const Reviews = () => {
                 position: "relative",
               }}
             >
-              <Typography variant="body2" paragraph style={{ color: "#fff" }}>
+              <Typography
+                variant="body2"
+                paragraph
+                style={{ color: "#fff", lineHeight: "25px" }}
+              >
                 <FormatQuoteIcon
                   style={{
                     transform: "rotate(180deg)",
