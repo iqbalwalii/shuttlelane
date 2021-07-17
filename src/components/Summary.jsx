@@ -15,6 +15,7 @@ const Summary = ({ total, handler, title, subTotal, country }) => {
     "Saint Pierre and Miquelon",
   ];
   const GBP = ["United Kingdom"];
+  const USD = [""];
 
   return (
     <div className={styles.card}>
@@ -23,29 +24,39 @@ const Summary = ({ total, handler, title, subTotal, country }) => {
         <p>
           <span>{title}</span> <span>$ {total}</span>
         </p>
-        {/* <p><span>7.5% Vat</span> <span>$2.44</span></p> */}
         <p className={styles.total}>
           <span>Sub Total</span> <span>${subTotal} </span>
         </p>
         <select name="currency" id="currency">
+          
+          {country == "Nigeria" ? (
+            <option value="NGN" selected>
+              NGN &#8358;{" "}
+            </option>
+          ) : (
+            <option value="NGN">NGN &#8358; </option>
+          )}
           {Euro.includes(country) ? (
-            <option selected value="EUR">
+            <option value="EUR" selected>
               EUR &euro;
             </option>
           ) : (
             <option value="EUR">EUR &euro;</option>
           )}
           {GBP.includes(country) ? (
-            <option selected value="GBP">
+            <option value="GBP" selected>
               GBP &#163;
             </option>
           ) : (
             <option value="GBP">GBP &#163;</option>
           )}
-          <option value="EUR">EUR &euro;</option>
-          <option value="NGN">NGN &#8358; </option>
-          <option value="USD">USD $</option>
-          <option value="GBP">GBP &#163;</option>
+          {country == "United States" ? (
+            <option value="USD" selected>
+              USD $
+            </option>
+          ) : (
+            <option value="USD">USD $</option>
+          )}
         </select>
       </div>
     </div>

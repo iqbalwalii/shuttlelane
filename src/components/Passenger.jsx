@@ -1,7 +1,7 @@
 import { Card } from "@material-ui/core";
 import React, { Component } from "react";
 import next from "../styles/Passenger.module.css";
-import { Person, Mail } from "@material-ui/icons";
+import { Person, Mail, Dialpad } from "@material-ui/icons";
 
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -62,6 +62,8 @@ const Passenger = ({ values, handler }) => {
                 value={values.firstName}
               />
             </div>
+          </div>
+          <div className={next.formGroup}>
             <div className={next.inputControl}>
               <span>
                 <Person fontSize="small" />
@@ -75,8 +77,6 @@ const Passenger = ({ values, handler }) => {
                 value={values.lastName}
               />
             </div>
-          </div>
-          <div className={next.formGroup}>
             <div className={next.inputControl}>
               <span>
                 <Mail fontSize="small" />
@@ -91,7 +91,13 @@ const Passenger = ({ values, handler }) => {
                 value={values.email}
               />
             </div>
-            <div className="number">
+          </div>
+          <div className={next.formGroup}>
+            <div className={next.inputControl}>
+              <span>
+                <Dialpad />
+              </span>
+
               <select
                 name="countryCode"
                 id=""
@@ -750,6 +756,11 @@ const Passenger = ({ values, handler }) => {
                   </option>
                 </optgroup>
               </select>
+            </div>
+            <div className={next.inputControl}>
+              <span>
+                <Dialpad />
+              </span>
               <input
                 type="tel"
                 required

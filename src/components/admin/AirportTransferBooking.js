@@ -70,7 +70,7 @@ const AirportTransferBooking = () => {
             <tbody className={styles.tableContent}>
               {bookings?.map((item, idx) => {
                 return (
-                  <tr>
+                  <tr key={item.bookingReference}>
                     <td
                       style={{
                         marginRight: "15px",
@@ -108,7 +108,7 @@ const AirportTransferBooking = () => {
                     <td>
                       <p>
                         <span>{item.title}</span> <span>{item.firstName}</span>
-                        <span>{item.lastname}</span>
+                        <span>{item.lastName}</span>
                       </p>
                       <p>{item.email}</p>
                       <p>

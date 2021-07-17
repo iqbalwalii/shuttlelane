@@ -64,7 +64,7 @@ const Booking = () => {
   }
   const [data, setData] = useState(fields);
 
-  const [selectedCar, setSelectedCar] = useState("");
+  const [selectedCar, setSelectedCar] = useState(fields.selectedCar || "");
   const [total, setTotal] = useState("");
   const [passengerDetails, setPassengerDetails] = useState(passengerFields);
 

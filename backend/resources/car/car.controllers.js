@@ -1,13 +1,16 @@
 const sendSMS = require("../../utils/twilio");
-const Booking = require("./booking.model");
+const Car = require("./car.model");
+
+// controllers
+
 const getAll = async (req, res) => {
-  console.log("Get all Bookings ");
+  console.log("Get all Car Hiring ");
   try {
-    const doc = await Booking.find();
+    const doc = await Car.find();
     if (!doc) {
       return res.status(200).json({ error: "Something went wrong" });
     }
-    return res.status(201).json({ data: doc, message: "All Bookings" });
+    return res.status(201).json({ data: doc, message: "All cars" });
   } catch (error) {
     return res.status(500).json({ error });
   }
@@ -15,25 +18,25 @@ const getAll = async (req, res) => {
 
 // POST
 const createOne = async (req, res) => {
-  console.log("Create One Booking hell", req.body);
+  console.log("Create One car hire", req.body);
 
   try {
-    const doc = await Booking.create(req.body);
+    const doc = await Car.create(req.body);
     if (!doc) {
       return res.status(200).json({ error: "Something went wrong" });
     }
     const data = doc.toJSON();
 
-    sendSMS();
+    // sendSMS();
     console.log("sms in CONTROLLER", data.arrivalDate);
-    return res.status(201).json({ data: doc, message: "Booking Added" });
+    return res.status(201).json({ data: doc, message: "car Added" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error });
   }
 };
-const bookingControllers = {
+const carControllers = {
   getAll,
   createOne,
 };
-module.exports = bookingControllers;
+module.exports = carControllers;

@@ -22,15 +22,16 @@ const card = {
   boxShadow: "0 0 15px 5px #e7e7e7",
 };
 
-const Overview = ({ bookings }) => {
+const Overview = ({ bookings, carBooking }) => {
   console.log("bookings", bookings);
+  console.log("carBookings", carBooking);
   return (
     <>
       <Grid item sm={3}>
         <div className={styles.purpleBackground} style={card}>
           <div>
             <h1>{bookings?.length}</h1>
-            <p>Airport Pickup Bookings</p>
+            <p>Airport Bookings</p>
           </div>
           <Flight fontSize="large" />
         </div>
@@ -38,7 +39,7 @@ const Overview = ({ bookings }) => {
       <Grid item sm={3}>
         <div className={styles.greenBackground} style={card}>
           <div>
-            <h1>115</h1>
+            <h1>{carBooking?.length}</h1>
             <p>Car Bookings</p>
           </div>
           <LocalTaxi fontSize="large" />
@@ -63,7 +64,7 @@ const Overview = ({ bookings }) => {
         </div>
       </Grid>
       <Grid item sm={6} className={styles.cardStat}>
-        <h4>Last 5 Airport Pickup Bookings</h4>
+        <h4>Last 5 Airport Bookings</h4>
         <p className={styles.entry}>
           <span>No</span> <span>Booking Ref</span>
           <span>Date & Time</span> <span>Transfer Type</span>
@@ -71,7 +72,7 @@ const Overview = ({ bookings }) => {
         </p>
         {bookings?.slice(0, 5).map((item, idx) => {
           return (
-            <p className={styles.entry}>
+            <p key={item.bookingReference} className={styles.entry}>
               <span>{++idx}</span> <span>{item.bookingReference}</span>
               <span>
                 {item.arrivalDate?.slice(0, 10) ||
@@ -85,12 +86,24 @@ const Overview = ({ bookings }) => {
         })}
       </Grid>
       <Grid item sm={6} className={styles.cardStat}>
-        <h4>Last 5 Car Transfer Bookings</h4>
+        <h4>Last 5 Car Bookings</h4>
         <p className={styles.entry}>
           <span>No</span> <span>Booking Ref</span>
-          <span>Date & Time</span> <span>Transfer Type</span>
-          <span>Payment Status</span>
+          <span>Date & Time</span> <span>Car Type</span>
+          <span>Amount </span>
         </p>
+        {carBooking?.slice(0, 5).map((item, idx) => {
+          return (
+            <p key={item.bookingReference} className={styles.entry}>
+              <span>{++idx}</span> <span>{item.bookingReference}</span>
+              <span>
+                {item.date?.slice(0, 10)} <br />& {item.time}
+              </span>
+              <span>{item.carType}</span>
+              <span>{item.amount}</span>
+            </p>
+          );
+        })}
       </Grid>
       <Grid item sm={6} className={styles.cardStat}>
         <h4>Last 5 Priority Pass Bookings</h4>

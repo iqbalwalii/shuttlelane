@@ -7,7 +7,7 @@ const dbConnect = require("./utils/db");
 const postRouter = require("./resources/post/post.router");
 const bookingRouter = require("./resources/booking/booking.router");
 const hotelRouter = require("./resources/hotel/hotel.router");
-// const driveRouter = require('./resources/drive/drive.router');
+const carRouter = require("./resources/car/car.router");
 const fleetRouter = require("./resources/fleet/fleet.router");
 const userRouter = require("./resources/user/user.router");
 const auth = require("./utils/auth");
@@ -30,9 +30,9 @@ app.prepare().then(() => {
   server.use(urlencoded({ extended: true }));
   server.use(express.static("./src/public"));
   server.use("/api/booking/pickup", bookingRouter);
-  server.use("/api/fleet", fleetRouter);
-  server.use("/api/hotel", hotelRouter);
-  // server.use('/api/drive', driveRouter);
+  server.use("/api/booking/fleet", fleetRouter);
+  server.use("/api/booking/hotel", hotelRouter);
+  server.use("/api/booking/car", carRouter);
   server.use("/api/posts", postRouter);
   server.use("/api/users", sign, userRouter);
 

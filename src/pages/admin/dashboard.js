@@ -16,18 +16,32 @@ import styles from "../../styles/Dashboard.module.css";
 const dashboard = () => {
   const [state, setState] = useState("Overview");
   const [bookings, setBookings] = useState([]);
-  // const [dropfBookings, setbookings] = useState([]);
+  const [carBookings, setCarBookings] = useState([]);
+
   const onStateChange = (value) => {
     console.log("value", value);
     setState(value);
   };
   useEffect(() => {
+    // Airport Bookings
     fetch("http://localhost:3001/api/booking/pickup")
       .then((res) => res.json())
       .then((data) => {
         {
-          console.log('IN DASH', data)
-          setBookings(data.data);}
+          console.log("IN DASH", data);
+          setBookings(data.data);
+        }
+      })
+      .catch((err) => console.log(err));
+
+    // Car Bookings
+    fetch("http://localhost:3001/api/booking/car")
+      .then((res) => res.json())
+      .then((data) => {
+        {
+          console.log("IN car DASh", data.data);
+          setCarBookings(data.data);
+        }
       })
       .catch((err) => console.log(err));
   }, []);
@@ -38,14 +52,13 @@ const dashboard = () => {
       justifyContent="center"
       alignItems="flex-start"
       className={styles.container}
-      style={{ marginTop: "6rem" }}
     >
       <Grid item sm={2}>
         <AdminAside onStateChange={onStateChange} />
       </Grid>
       <Grid item container justifyContent="space-evenly" sm={10}>
         {state == "Overview" ? (
-          <Overview bookings={bookings} />
+          <Overview bookings={bookings} carBooking={carBookings} />
         ) : state.includes("Car") ? (
           <CarBooking />
         ) : state.includes("Airport") ? (
